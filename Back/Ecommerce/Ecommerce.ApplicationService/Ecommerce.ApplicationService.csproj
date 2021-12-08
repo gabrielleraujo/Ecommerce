@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+	
+	<ItemGroup>
+		<ProjectReference Include="..\Ecommerce.DomainService\Ecommerce.DomainService.csproj" />
+		<ProjectReference Include="..\Ecommerce.ValidationService\Ecommerce.ValidationService.csproj" />
+	</ItemGroup>
+
+</Project>

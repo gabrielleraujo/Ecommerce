@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.12" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.2.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Ecommerce.ApplicationService\Ecommerce.ApplicationService.csproj" />
+		<ProjectReference Include="..\Ecommerce.Data\Ecommerce.Data.csproj" />
+		<ProjectReference Include="..\Ecommerce.DomainService\Ecommerce.DomainService.csproj" />
+		<ProjectReference Include="..\Ecommerce.Repository\Ecommerce.Repository.csproj" />
+		<ProjectReference Include="..\Ecommerce.Validation\Ecommerce.Validation.csproj" />
+		<ProjectReference Include="..\Ecommerce.Authentication\Ecommerce.Authentication.csproj" />
+	</ItemGroup>
+
+</Project>

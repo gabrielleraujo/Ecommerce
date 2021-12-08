@@ -1,0 +1,12 @@
+C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.CrossCutting\bin\Debug\net5.0\Job.CrossCutting.deps.json
+C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.CrossCutting\bin\Debug\net5.0\Job.CrossCutting.dll
+C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.CrossCutting\bin\Debug\net5.0\ref\Job.CrossCutting.dll
+C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.CrossCutting\bin\Debug\net5.0\Job.CrossCutting.pdb
+C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.CrossCutting\obj\Debug\net5.0\Job.CrossCutting.csproj.AssemblyReference.cache
+C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.CrossCutting\obj\Debug\net5.0\Job.CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.CrossCutting\obj\Debug\net5.0\Job.CrossCutting.AssemblyInfoInputs.cache
+C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.CrossCutting\obj\Debug\net5.0\Job.CrossCutting.AssemblyInfo.cs
+C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.CrossCutting\obj\Debug\net5.0\Job.CrossCutting.csproj.CoreCompileInputs.cache
+C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.CrossCutting\obj\Debug\net5.0\Job.CrossCutting.dll
+C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.CrossCutting\obj\Debug\net5.0\ref\Job.CrossCutting.dll
+C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.CrossCutting\obj\Debug\net5.0\Job.CrossCutting.pdb
