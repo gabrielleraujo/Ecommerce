@@ -10,8 +10,4 @@
     <PackageReference Include="RestSharp" Version="106.13.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Job.CrossCutting\Job.CrossCutting.csproj" />
-  </ItemGroup>
-
 </Project>
