@@ -10,6 +10,7 @@ namespace Ecommerce.IoC.MapperProfiles
         {
             CreateMap<CreateSizeDTO, Size>();
             CreateMap<Size, ReadSizeDTO>();
+            CreateMap<ReadSizeDTO, Size> ();
         }
     }
 }

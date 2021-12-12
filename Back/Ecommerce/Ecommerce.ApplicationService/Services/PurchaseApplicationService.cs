@@ -3,7 +3,7 @@ using Ecommerce.CrossCutting.DTO.Purchase;
 using Ecommerce.ApplicationService.Interfaces;
 using Ecommerce.ValidationService.Services;
 using Ecommerce.DomainService.Interfaces;
-using FluentResults;
+using System;
 
 namespace Ecommerce.ApplicationService.Services
 {
@@ -11,21 +11,16 @@ namespace Ecommerce.ApplicationService.Services
     {
         private readonly IPurchaseDomainService _purchaseDomainService;
         private readonly PurchaseValidationService _purchaseValidationService;
-        private readonly IPurchaseSummaryApplicationService _purchaseSummaryApplicationService;
+        private readonly IUserDomainService _userDomainService;
 
         public PurchaseApplicationService(
             IPurchaseDomainService purchaseDomainService, 
             PurchaseValidationService purchaseValidationService,
-            IPurchaseSummaryApplicationService purchaseSummaryApplicationService)
+            IUserDomainService userDomainService)
         {
             _purchaseDomainService = purchaseDomainService;
             _purchaseValidationService = purchaseValidationService;
-            _purchaseSummaryApplicationService = purchaseSummaryApplicationService;
-        }
-
-        public IList<ReadPurchaseDTO> List()
-        {
-            return _purchaseDomainService.List();
+            _userDomainService = userDomainService;
         }
 
         public ReadPurchaseDTO GetById(int id)
@@ -33,34 +28,44 @@ namespace Ecommerce.ApplicationService.Services
             return _purchaseDomainService.GetById(id);
         }
 
+        public IList<ReadPurchaseDTO> GetHasNoSummary()
+        {
+            return _purchaseDomainService.GetHasNoSummary();
+        }
+
+        public IList<ReadPurchaseDTO> List()
+        {
+            return _purchaseDomainService.List();
+        }
+
+        public IList<ReadPurchaseDTO> ListUserPurchases(int userId)
+        {
+            return _purchaseDomainService.ListUserPurchases(userId);
+        }
+
         public ReadPurchaseDTO Add(CreatePurchaseDTO novaCompraDto)
         {
             _purchaseValidationService.Validate(novaCompraDto);
+
+            ResolveAddress(novaCompraDto);
 
             var readCompraDto = _purchaseDomainService.Add(novaCompraDto);
 
             return readCompraDto;
         }
 
-        public IList<ReadPurchaseDTO> GetHasNoSummary()
+        private void ResolveAddress(CreatePurchaseDTO novaCompraDto)
         {
-            return _purchaseDomainService.GetHasNoSummary();
-        }
-
-        public Result MakeSummary()
-        {
-            var purchases = GetHasNoSummary();
-            if (purchases.Count == 0)
+            if (novaCompraDto.AddressId <= 0)
             {
-                return Result.Fail("There are no purchases to summarize at the moment.");
-            }
-            _purchaseSummaryApplicationService.Add(purchases);
-            return Result.Ok();
-        }
+                var addressId = _userDomainService.GetAddress(novaCompraDto.UserId);
 
-        public IList<ReadPurchaseDTO> ListUserPurchases(int userId)
-        {
-            return _purchaseDomainService.ListUserPurchases(userId);
+                if (addressId == null)
+                {
+                    throw new ArgumentException("No address was associated with the purchase.");
+                }
+                novaCompraDto.AddressId = addressId ?? 0;
+            }
         }
     }
 }

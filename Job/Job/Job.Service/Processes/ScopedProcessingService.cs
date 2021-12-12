@@ -7,7 +7,7 @@ namespace Job.Service.Processes
 {
     public class ScopedProcessingService : IScopedProcessingService
     {
-        private int executionCount = 2002;
+        private int executionCount = 0;
         private readonly ILogger _logger;
         private readonly IPurchaseDomainService _purchaseDomainService;
 

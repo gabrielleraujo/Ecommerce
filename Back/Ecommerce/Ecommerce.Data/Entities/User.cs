@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
 namespace Ecommerce.Data.Entities
 {
@@ -15,8 +14,6 @@ namespace Ecommerce.Data.Entities
         public int? AddressId { get; set; }
         public virtual Address Address { get; set; }
 
-        //[JsonIgnore]
         public virtual IList<Purchase> Purchases { get; set; }
-        //[JsonIgnore]
     }
 }

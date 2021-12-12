@@ -10,6 +10,7 @@ namespace Ecommerce.IoC.MapperProfiles
         {
             CreateMap<CreateColorDTO, Color>();
             CreateMap<Color, ReadColorDTO>();
+            CreateMap<ReadColorDTO, Color>();
         }
     }
 }

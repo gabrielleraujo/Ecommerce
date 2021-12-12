@@ -18,9 +18,5 @@ namespace Job.CrossCutting.DTO.Product
         public ReadCategoryDTO Category { get; set; }
         public ReadColorDTO Color { get; set; }
         public ReadSizeDTO Size { get; set; }
-
-        //public virtual Ecommerce.Data.Entities.Category Categoria { get; set; }
-        //public virtual Ecommerce.Data.Entities.Color Cor { get; set; }
-        //public virtual Ecommerce.Data.Entities.Size Tamanho { get; set; }
     }
 }

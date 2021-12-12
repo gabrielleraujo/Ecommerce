@@ -10,7 +10,9 @@ namespace Ecommerce.Repository.Interfaces
         Purchase GetById(int id);
         IList<Purchase> GetByUserId(int userId);
         IList<Purchase> GetHasNoSummary();
-        void SetHasSummary(bool value, int id);
         IList<Purchase> ListUserPurchases(int userId);
+        void Update(IList<Purchase> purchases);
+
+        //void SetHasSummary(bool value, IList<Purchase> readPurchasesDto);
     }
 }

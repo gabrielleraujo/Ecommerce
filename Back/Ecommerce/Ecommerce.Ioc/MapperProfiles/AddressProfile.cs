@@ -10,6 +10,7 @@ namespace Ecommerce.IoC.MapperProfiles
         {
             CreateMap<CreateAddressDTO, Address>();
             CreateMap<Address, ReadAddressDTO>();
+            CreateMap<ReadAddressDTO, Address>();
         }
     }
 }

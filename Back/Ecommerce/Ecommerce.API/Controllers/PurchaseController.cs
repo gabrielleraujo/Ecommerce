@@ -62,16 +62,6 @@ namespace Ecommerce.API.Controllers
             }
         }
 
-        [HttpGet("make-summary")]
-        [SwaggerOperation(Summary = "Used by Job to make the purchase summary")]
-        public IActionResult MakeSummary()
-        {
-            var result = _purchaseApplicationService.MakeSummary();
-
-            if (result.IsFailed) { return NotFound(new { message = result.Reasons[0] }); }
-            return Ok();
-        }
-
 
         [HttpGet("get-has-no-summary")]
         [SwaggerOperation(Summary = "Lists all purchases that do not yet have a Summary.")]

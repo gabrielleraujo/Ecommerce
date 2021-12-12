@@ -17,6 +17,5 @@ namespace Ecommerce.Data.Entities
         public DateTime Date { get; set; }
 
         public IList<PurchaseItem> Products { get; set; }
-        
     }
 }

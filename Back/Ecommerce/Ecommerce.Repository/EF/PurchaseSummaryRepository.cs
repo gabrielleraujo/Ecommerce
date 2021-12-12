@@ -17,17 +17,15 @@ namespace Ecommerce.Repository.EF
         }
 
 
-        public void Add(IList<PurchaseSummary> sumary)
+        public void Add(IList<PurchaseSummary> summary)
         {
             using var transaction = _context.Database.BeginTransaction();
 
             try
             {
-                foreach (var item in sumary)
-                {
-                    _context.Add(item);
-                    _context.SaveChanges();
-                }
+                _context.AddRange(summary);
+                _context.SaveChanges();
+
                 transaction.Commit();
             }
             catch (Exception e) { throw e; }

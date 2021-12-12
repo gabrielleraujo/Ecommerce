@@ -11,6 +11,7 @@ namespace Ecommerce.IoC.MapperProfiles
             CreateMap<CreateProductDTO, Product>();
             CreateMap<Product, ReadProductDTO>();
             CreateMap<UpdateProductDTO, Product>();
+            CreateMap<ReadProductDTO, Product>();
         }
     }
 }

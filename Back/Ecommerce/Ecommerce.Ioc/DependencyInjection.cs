@@ -12,6 +12,7 @@ using Ecommerce.Repository.EF;
 
 using Ecommerce.ValidationService.Services;
 using Ecommerce.ApplicationService;
+using Ecommerce.DomainService.Mapping;
 
 namespace Ecommerce.IoC
 {
@@ -60,6 +61,7 @@ namespace Ecommerce.IoC
             services.AddTransient<IPurchaseSummaryApplicationService, PurchaseSummaryApplicationService>();
             services.AddTransient<IPurchaseSummaryDomainService, PurchaseSummaryDomainService>();
             services.AddTransient<IPurchaseSummaryRepository, PurchaseSummaryRepository>();
+            services.AddTransient<IPurchaseSummaryMapping, PurchaseSummaryMapping>();
         }
 
         private static void AddUserDependencies(IServiceCollection services)

@@ -25,13 +25,9 @@ namespace Ecommerce.Repository.EF
             _context.SaveChanges();
         }
 
-        public void SetHasSummary(bool value, int id)
+        public void Update(IList<Purchase> purchases)
         {
-            _context.Purchases
-                .Where(p => p.Id == id)
-                .FirstOrDefault()
-                .HasSummary = value;
-
+            _context.Purchases.UpdateRange(purchases);
             _context.SaveChanges();
         }
 

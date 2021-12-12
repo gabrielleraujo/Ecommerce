@@ -9,7 +9,7 @@ namespace Ecommerce.DomainService.Interfaces
         IList<ReadPurchaseDTO> List();
         ReadPurchaseDTO GetById(int id);
         IList<ReadPurchaseDTO> GetHasNoSummary();
-        void SetHasSummary(bool value, int id);
         IList<ReadPurchaseDTO> ListUserPurchases(int userId);
+        void SetHasSummary(bool v, IList<ReadPurchaseDTO> readPurchasesDto);
     }
 }

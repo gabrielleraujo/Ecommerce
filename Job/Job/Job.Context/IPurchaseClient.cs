@@ -4,6 +4,6 @@ namespace Job.Context
 {
     public interface IPurchaseClient
     {
-        Task GetHasNoSummaryAsync();
+        Task BuildSummaryAsync();
     }
 }

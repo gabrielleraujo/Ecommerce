@@ -17,15 +17,15 @@ namespace Job.Context
             _logger = logger;
         }
 
-        public async Task GetHasNoSummaryAsync()
+        public async Task BuildSummaryAsync()
         {
-            _logger.LogInformation("Searching purchase by ID is working.\n");
+            _logger.LogInformation($"{nameof(BuildSummaryAsync)} is working.\n");
 
-            var request = new RestRequest($"purchase/make-summary");
+            var request = new RestRequest($"purchase-summary/build");
 
             var response = await _client.ExecuteGetAsync<IList<ReadPurchaseDTO>>(request);
 
-            _logger.LogInformation($"StatusCode: {response.StatusCode} - in {nameof(GetHasNoSummaryAsync)}\n");
+            _logger.LogInformation($"StatusCode: {response.StatusCode}\n");
         }
     }
 }

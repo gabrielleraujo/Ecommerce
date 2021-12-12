@@ -23,7 +23,7 @@ namespace Job.DomainService
             _logger.LogInformation(
                    $"PurchaseDomainService Processing Service is started - {nameof(GetHasNoSummaryAsync)}.");
 
-            await _purchaseClient.GetHasNoSummaryAsync();
+            await _purchaseClient.BuildSummaryAsync();
         }
     }
 }

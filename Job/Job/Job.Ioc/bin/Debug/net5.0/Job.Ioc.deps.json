@@ -544,6 +544,7 @@
       },
       "Job.Context/1.0.0": {
         "dependencies": {
+          "Job.CrossCutting": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.12",
           "Newtonsoft.Json": "13.0.1",
           "RestSharp": "106.13.0"
@@ -552,10 +553,16 @@
           "Job.Context.dll": {}
         }
       },
+      "Job.CrossCutting/1.0.0": {
+        "runtime": {
+          "Job.CrossCutting.dll": {}
+        }
+      },
       "Job.DomainService/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
-          "Job.Context": "1.0.0"
+          "Job.Context": "1.0.0",
+          "Job.CrossCutting": "1.0.0"
         },
         "runtime": {
           "Job.DomainService.dll": {}
@@ -568,14 +575,6 @@
         },
         "runtime": {
           "Job.Service.dll": {}
-        }
-      },
-      "Job.CrossCutting/1.0.0.0": {
-        "runtime": {
-          "Job.CrossCutting.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
         }
       }
     }
@@ -934,6 +933,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Job.CrossCutting/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Job.DomainService/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -941,11 +945,6 @@
     },
     "Job.Service/1.0.0": {
       "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Job.CrossCutting/1.0.0.0": {
-      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }
