@@ -3,7 +3,10 @@ using Swashbuckle.AspNetCore.Annotations;
 using Microsoft.AspNetCore.Authorization;
 using Ecommerce.CrossCutting.DTO.User;
 using Microsoft.AspNetCore.Http;
-using Ecommerce.ApplicationService;
+using Ecommerce.Authentication;
+using Ecommerce.Ioc.Common;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 
 namespace Ecommerce.API.Controllers
 {
@@ -13,12 +16,11 @@ namespace Ecommerce.API.Controllers
     [Route("api/v{version:apiVersion}/authentication")]
     public class AuthenticationController : ControllerBase
     {
-        private readonly IAuthenticationApplicationService _authenticationApplicationService;
+        private readonly IAuthenticationApplicationService _authentication;
 
-        public AuthenticationController(
-            IAuthenticationApplicationService authenticationApplicationService)
+        public AuthenticationController(IAuthenticationApplicationService authentication)
         {
-            _authenticationApplicationService = authenticationApplicationService;
+            _authentication = authentication;
         }
 
         /// <summary>
@@ -31,7 +33,7 @@ namespace Ecommerce.API.Controllers
         ///
         ///     POST
         ///     {
-        ///        "username": "jao",
+        ///        "username": "gabi",
         ///        "password": "123"
         ///     }
         ///
@@ -40,20 +42,15 @@ namespace Ecommerce.API.Controllers
         /// <response code="401">If were unable to authenticate you</response>
         /// <response code="200">Returns the newly token</response>
         [SwaggerOperation(Summary = "Authenticates a user and responds with the generated token")]
-        [HttpPost("login")]
+        [HttpPost]
         [AllowAnonymous]
-        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationErrorResponse))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(string))]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
-        public IActionResult Autenticate([FromBody] LoginDTO loginDto)
+        public async Task<IActionResult> Autenticate([FromBody] LoginDTO loginDto)
         {
-            if (!ModelState.IsValid) { return BadRequest(); }
-
-            var result = _authenticationApplicationService.CreateToken(loginDto);
-
-            if (result.IsFailed) { return Unauthorized(result.Errors); }
-
-            return Ok(result.Value);
+            var result = await _authentication.CreateToken(loginDto);
+            return result.IsFailed ? Unauthorized(result.Errors) : Ok(result.Value);
         }
     }
 }

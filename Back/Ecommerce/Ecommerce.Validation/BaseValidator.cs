@@ -1,4 +1,5 @@
 ﻿using Ecommerce.Validation.Exceptions;
+using System;
 using System.Collections.Generic;
 
 namespace Ecommerce.Validation

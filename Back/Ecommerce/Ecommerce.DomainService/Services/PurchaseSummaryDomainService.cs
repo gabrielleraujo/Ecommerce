@@ -6,7 +6,6 @@ using Ecommerce.Data.Entities;
 using System.Collections.Generic;
 using System;
 using System.Linq;
-using Ecommerce.DomainService.Mapping;
 
 namespace Ecommerce.DomainService.Services
 {

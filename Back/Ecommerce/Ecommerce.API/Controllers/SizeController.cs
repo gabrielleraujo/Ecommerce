@@ -3,10 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using Ecommerce.CrossCutting.DTO.Size;
 using Ecommerce.ApplicationService.Interfaces;
-using Ecommerce.Validation.Exceptions;
-using Ecommerce.API.Commons.Responses;
-using System;
 using Microsoft.AspNetCore.Http;
+using Ecommerce.Ioc.Common;
 
 namespace Ecommerce.API.Controllers
 {
@@ -44,22 +42,11 @@ namespace Ecommerce.API.Controllers
         [SwaggerOperation(Summary = "Add a size")]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(ReadSizeDTO))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationErrorResponse))]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(InternalServerErrorResponse))]
         public IActionResult Add([FromBody] CreateSizeDTO createSizeDto)
         {
-            try
-            {
-                var readDto = _sizeApplicationService.Add(createSizeDto);
-                return CreatedAtAction(nameof(GetById), new { id = readDto.Id }, readDto);
-            }
-            catch (ValidationException e)
-            {
-                return BadRequest(ValidationErrorResponse.From(e));
-            }
-            catch (Exception e)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
-            }
+            var readDto = _sizeApplicationService.Add(createSizeDto);
+            return CreatedAtAction(nameof(GetById), new { id = readDto.Id }, readDto);
         }
 
 

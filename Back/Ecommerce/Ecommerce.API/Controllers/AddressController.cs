@@ -1,11 +1,9 @@
-﻿using Ecommerce.API.Commons.Responses;
-using Ecommerce.CrossCutting.DTO.Address;
+﻿using Ecommerce.CrossCutting.DTO.Address;
+using Ecommerce.Ioc.Common;
 using Ecommerce.ApplicationService.Interfaces;
-using Ecommerce.Validation.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
-using System;
 using System.Collections.Generic;
 
 namespace Ecommerce.API.Controllers
@@ -36,22 +34,11 @@ namespace Ecommerce.API.Controllers
         [SwaggerOperation(Summary = "Add a address")]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(ReadAddressDTO))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationErrorResponse))]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(InternalServerErrorResponse))]
         public IActionResult Add([FromBody] CreateAddressDTO createAddressDto)
         {
-            try
-            {
-                var readDto = _addressApplicationService.Add(createAddressDto);
-                return CreatedAtAction(nameof(GetById), new { id = readDto.Id }, readDto);
-            }
-            catch (ValidationException e)
-            {
-                return BadRequest(ValidationErrorResponse.From(e));
-            }
-            catch (Exception e)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
-            }
+            var readDto = _addressApplicationService.Add(createAddressDto);
+            return CreatedAtAction(nameof(GetById), new { id = readDto.Id }, readDto);
         }
 
 

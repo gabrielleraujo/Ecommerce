@@ -1,14 +1,12 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using FluentResults;
 using Swashbuckle.AspNetCore.Annotations;
-using Ecommerce.API.Commons.Responses;
 using Ecommerce.CrossCutting.DTO.Product;
 using Ecommerce.ApplicationService.Interfaces;
-using Ecommerce.Validation.Exceptions;
 using System.Collections.Generic;
+using Ecommerce.Ioc.Common;
 
 namespace Ecommerce.API.Controllers
 {
@@ -38,22 +36,11 @@ namespace Ecommerce.API.Controllers
         [SwaggerOperation(Summary = "Add a product")]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(ReadProductDTO))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationErrorResponse))]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(InternalServerErrorResponse))]
         public IActionResult Add([FromBody] CreateProductDTO createProductDto)
         {
-            try
-            {
-                var readDto = _productApplicationService.Add(createProductDto);
-                return CreatedAtAction(nameof(GetById), new { id = readDto.Id }, readDto);
-            }
-            catch (ValidationException e)
-            {
-                return BadRequest(ValidationErrorResponse.From(e));
-            }
-            catch (Exception e)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
-            }
+            var readDto = _productApplicationService.Add(createProductDto);
+            return CreatedAtAction(nameof(GetById), new { id = readDto.Id }, readDto);
         }
 
         
@@ -63,7 +50,6 @@ namespace Ecommerce.API.Controllers
         public IActionResult List()
         {
             var readDto = _productApplicationService.List();
-
             return Ok(readDto);
         }
 

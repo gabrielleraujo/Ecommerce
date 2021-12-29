@@ -1,0 +1,85 @@
+﻿@{ ViewData["Title"] = "User Registration"; }
+
+@model UserRegistrationViewModel;
+
+<h5 class="sessao">Register a User</h5>
+<div>
+    <div>
+
+        <form asp-controller="User"
+              asp-action="Registeation"
+              class="form-row"
+              method="post">
+
+            <div class="form-group col-md-6">
+                <label class="control-label" for="Name">Name</label>
+                <input type="text" class="form-control" placeholder="Name"
+                       asp-for="@Model.Name">
+                <span asp-validation-for="@Model.Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label class="control-label" for="Surname">Surname</label>
+                <input type="text" class="form-control" placeholder="Surname"
+                       asp-for="@Model.Surname">
+                <span asp-validation-for="@Model.Surname" class="text-danger"></span>
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="form-group col-md-6">
+                <label class="control-label" for="Email">Email</label>
+                <input type="email" class="form-control" placeholder="Email"
+                       asp-for="@Model.Email">
+                <span asp-validation-for="@Model.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label class="control-label" for="Password">Password</label>
+                <input type="password" class="form-control" placeholder="Password"
+                       asp-for="@Model.Password">
+                <span asp-validation-for="@Model.Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label class="control-label" for="RePassword">RePassword</label>
+                <input type="password" class="form-control" placeholder="RePassword"
+                       asp-for="@Model.RePassword">
+                <span asp-validation-for="@Model.RePassword" class="text-danger"></span>
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="form-group col-md-6">
+                <label class="control-label" for="Username">Username</label>
+                <input type="text" class="form-control" placeholder="Username"
+                       asp-for="@Model.Username">
+                <span asp-validation-for="@Model.Username" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label class="control-label" for="AddressId">Address</label>
+
+                <select class="form-control single-select" name="Address"
+                        asp-for="@Model.AddressId">
+                    <option selected value="">[Select your address]</option>
+                    <option value=@null>Select later</option>
+                </select>
+                <span asp-validation-for="@Model.AddressId" class="text-danger"></span>
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="form-group">
+                <a class="btn btn-warning" asp-action="Index">
+                    Back
+                </a>
+
+                <button type="submit"
+                        class="btn btn-success">
+                    Finish
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

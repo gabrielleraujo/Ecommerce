@@ -1,14 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Linq;
 using System.Collections.Generic;
-using System.Linq;
-using System;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Swashbuckle.AspNetCore.Annotations;
-using Ecommerce.API.Commons.Responses;
+using FluentResults;
+using Ecommerce.Ioc.Common;
 using Ecommerce.ApplicationService.Interfaces;
 using Ecommerce.CrossCutting.DTO.Category;
-using Ecommerce.Validation.Exceptions;
-using FluentResults;
 
 namespace Ecommerce.API.Controllers
 {
@@ -46,22 +44,11 @@ namespace Ecommerce.API.Controllers
         [SwaggerOperation(Summary = "Add a category")]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(ReadCategoryDTO))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationErrorResponse))]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(InternalServerErrorResponse))]
         public IActionResult Add([FromBody] CreateCategoryDTO createCategoryDto)
         {
-            try
-            {
-                var readDto = _categoryApplicationService.Add(createCategoryDto);
-                return CreatedAtAction(nameof(GetById), new { id = readDto.Id }, readDto);
-            }
-            catch (ValidationException e)
-            {
-                return BadRequest(ValidationErrorResponse.From(e));
-            }
-            catch (Exception e)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
-            }
+            var readDto = _categoryApplicationService.Add(createCategoryDto);
+            return CreatedAtAction(nameof(GetById), new { id = readDto.Id }, readDto);
         }
 
 

@@ -1,13 +1,11 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Swashbuckle.AspNetCore.Annotations;
-using Ecommerce.API.Commons.Responses;
 using Ecommerce.ApplicationService.Interfaces;
 using Ecommerce.CrossCutting.DTO.Purchase;
-using Ecommerce.Validation.Exceptions;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
+using Ecommerce.Ioc.Common;
 
 namespace Ecommerce.API.Controllers
 {
@@ -35,31 +33,16 @@ namespace Ecommerce.API.Controllers
         /// <response code="400">If the item is null</response>
         /// <response code="500">If an internal server error occurred</response>
         [HttpPost]
-        [Authorize]
+        //[Authorize]
         [SwaggerOperation(Summary = "Make purchase")]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(ReadPurchaseDTO))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationErrorResponse))]
-        [ProducesResponseType(StatusCodes.Status422UnprocessableEntity, Type = typeof(string))]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status422UnprocessableEntity, Type = typeof(UnprocessableEntityErrorResponse))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(InternalServerErrorResponse))]
         public IActionResult MakePurchase(CreatePurchaseDTO createPurchaseDto)
         {
-            try
-            {
-                var readDto = _purchaseApplicationService.Add(createPurchaseDto);
-                return CreatedAtAction(nameof(GetById), new { id = readDto.Id }, readDto);
-            }
-            catch (ValidationException e)
-            {
-                return BadRequest(ValidationErrorResponse.From(e));
-            }
-            catch(ArgumentException e)
-            {
-                return StatusCode(StatusCodes.Status422UnprocessableEntity, e.Message);
-            }
-            catch (Exception e)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
-            }
+            var readDto = _purchaseApplicationService.Add(createPurchaseDto);
+            return CreatedAtAction(nameof(GetById), new { id = readDto.Id }, readDto);
         }
 
 

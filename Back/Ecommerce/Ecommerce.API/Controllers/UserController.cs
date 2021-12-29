@@ -1,18 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
 using Swashbuckle.AspNetCore.Annotations;
 using FluentResults;
-using System;
 using Microsoft.AspNetCore.Http;
-using Ecommerce.API.Commons.Responses;
 using Ecommerce.ApplicationService.Interfaces;
 using Ecommerce.CrossCutting.DTO.User;
-using Ecommerce.Validation.Exceptions;
 using System.Collections.Generic;
+using Ecommerce.Ioc.Common;
 
 namespace Ecommerce.API.Controllers
 {
-    //[Authorize]
     [ApiController]
     [ApiVersion("1.0")]
     [ApiExplorerSettings(GroupName = "v1")]
@@ -54,22 +50,11 @@ namespace Ecommerce.API.Controllers
         [SwaggerOperation(Summary = "Add a user")]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(ReadUserDTO))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationErrorResponse))]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(InternalServerErrorResponse))]
         public IActionResult Adicionar([FromBody] CreateUserDTO createUserDto)
         {
-            try
-            {
-                var readDto = _userApplicationService.Add(createUserDto);
-                return CreatedAtAction(nameof(GetById), new { id = readDto.Id }, readDto);
-            }
-            catch (ValidationException e)
-            {
-                return BadRequest(ValidationErrorResponse.From(e));
-            }
-            catch (Exception e)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
-            }
+            var readDto = _userApplicationService.Add(createUserDto);
+            return CreatedAtAction(nameof(GetById), new { id = readDto.Id }, readDto);
         }
 
 
@@ -79,7 +64,6 @@ namespace Ecommerce.API.Controllers
         public IActionResult List()
         {
             var readDto = _userApplicationService.List();
-
             return Ok(readDto);
         }
 

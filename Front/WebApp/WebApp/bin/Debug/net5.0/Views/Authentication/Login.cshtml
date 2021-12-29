@@ -1,0 +1,49 @@
+﻿@{ ViewData["Title"] = "Authentication"; }
+
+@model LoginViewModel;
+
+<h5 class="sessao">Login</h5>
+<div>
+    <div>
+
+        <form asp-controller="Authentication"
+              asp-action="Login"
+              class="form-row"
+              method="post">
+
+            <div class="w-100"></div>
+            <div class="form-group col-md-6">
+                <label asp-for="@Model.Username" class="label-control"></label>
+                <input type="text" class="form-control" placeholder="Username"
+                       asp-for="@Model.Username">
+                <span asp-validation-for="@Model.Username" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="@Model.Password" class="label-control"></label>
+                <input type="password" class="form-control" placeholder="Password"
+                       asp-for="@Model.Password">
+                <span asp-validation-for="@Model.Password" class="text-danger"></span>
+            </div>
+            <div class="w-100"></div>
+
+            <div class="form-group col-md-6">
+                <a class="btn btn-warning" asp-controller="Produto" asp-action="Index">
+                    Back
+                </a>
+
+                <button type="submit"
+                        class="btn btn-success">
+                    Login
+                </button>
+            </div>
+
+            <div class="form-group col-md-6">
+                <p style="color:darkred">
+                    @TempData["Autenticated"]
+                </p>
+            </div>
+
+        </form>
+    </div>
+</div>

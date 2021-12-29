@@ -1,0 +1,151 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+
+:root {
+    --cor-black: black;
+    --cor-whiteSmoke: #F5F5F5;
+    --cor-stateGray: #708090;
+    --cor-lavender: #E6E6FA;
+    --cor-lightSteelBlue: #B0C4DE;
+    --cor-mediumAquamarine: #66CDAA;
+    --cor-fireBrick: #B22222;
+    --cor-khaki: #F0E68C;
+}
+
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    background-color: var(--cor-whiteSmoke);
+    color: var(--cor-lavender);
+    margin-bottom: 60px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+html * {
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif !important;
+}
+
+.nav.navbar-nav.navbar-right {
+    color: var(--cor-lavender);
+}
+.navbar {
+    background-color: var(--cor-black);
+    color: var(--cor-lavender) !important;
+}
+
+.container {
+    color: var(--cor-stateGray);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--cor-lightSteelBlue);
+}
+
+p {
+    color: var(--cor-stateGray);
+}
+
+ul {
+    color: var(--cor-black);
+}
+
+li {
+    list-style: none;
+}
+
+.btn {
+    background-color: var(--cor-lavender);
+    border: none;
+    color: var(--cor-stateGray);
+}
+
+.sessao {
+    font-size: 4rem;
+    font-family: 'Amatic SC', cursive !important;
+    font-family: 'Tangerine', cursive !important;
+    text-align: center;
+}
+
+.preco {
+    color: var(--cor-fireBrick);
+}
+
+.btn-success:hover {
+    background-color: var(--cor-mediumAquamarine) !important;
+}
+
+.btn-info:hover {
+    background-color: var(--cor-lightSteelBlue) !important;
+}
+
+.btn-danger:hover {
+    background-color: var(--cor-fireBrick) !important;
+}
+
+.btn-warning:hover {
+    background-color: var(--cor-khaki) !important;
+}

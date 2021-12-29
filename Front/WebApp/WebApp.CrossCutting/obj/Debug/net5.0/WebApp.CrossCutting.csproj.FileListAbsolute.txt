@@ -1,0 +1,11 @@
+C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.CrossCutting\bin\Debug\net5.0\WebApp.CrossCutting.deps.json
+C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.CrossCutting\bin\Debug\net5.0\WebApp.CrossCutting.dll
+C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.CrossCutting\bin\Debug\net5.0\ref\WebApp.CrossCutting.dll
+C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.CrossCutting\bin\Debug\net5.0\WebApp.CrossCutting.pdb
+C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.CrossCutting\obj\Debug\net5.0\WebApp.CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.CrossCutting\obj\Debug\net5.0\WebApp.CrossCutting.AssemblyInfoInputs.cache
+C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.CrossCutting\obj\Debug\net5.0\WebApp.CrossCutting.AssemblyInfo.cs
+C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.CrossCutting\obj\Debug\net5.0\WebApp.CrossCutting.csproj.CoreCompileInputs.cache
+C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.CrossCutting\obj\Debug\net5.0\WebApp.CrossCutting.dll
+C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.CrossCutting\obj\Debug\net5.0\ref\WebApp.CrossCutting.dll
+C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.CrossCutting\obj\Debug\net5.0\WebApp.CrossCutting.pdb
