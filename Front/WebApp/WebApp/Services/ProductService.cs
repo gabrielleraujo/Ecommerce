@@ -22,30 +22,30 @@ namespace WebApp.Services
 
         public async Task<ProductListViewModel> IndexAsync()
         {
-            var readProdutoDto = await _productApiClient.GetProductsAsync();
+            var readProductDto = await _productApiClient.GetProductsAsync();
 
-            var productHomeViewModel = _mapper.Map<IList<ProductHomeViewModel>>(readProdutoDto);
+            var productHomeViewModel = _mapper.Map<IList<ProductHomeViewModel>>(readProductDto);
             return new ProductListViewModel { Products = productHomeViewModel };
         }
 
         public async Task<IList<ProductDetailsViewModel>> ListAsync()
         {
-            var readProdutoDto = await _productApiClient.GetProductsAsync();
-            return _mapper.Map<IList<ProductDetailsViewModel>>(readProdutoDto); ;
+            var readProductDto = await _productApiClient.GetProductsAsync();
+            return _mapper.Map<IList<ProductDetailsViewModel>>(readProductDto); ;
         }
 
         public async Task<ProductDetailsViewModel> GetByIdAsync(int id)
         {
-            var readProdutoDto = await _productApiClient.GetProductByIdAsync(id);
-            return _mapper.Map<ProductDetailsViewModel>(readProdutoDto);
+            var readProductDto = await _productApiClient.GetProductByIdAsync(id);
+            return _mapper.Map<ProductDetailsViewModel>(readProductDto);
         }
 
         public async Task<ProductDetailsViewModel> AddAsync(ProductRegistrationViewModel produtoViewModel)
         {
             var createProductDto = _mapper.Map<CreateProductDTO>(produtoViewModel);
 
-            var readProdutoDto = await _productApiClient.PostProductAsync(createProductDto);
-            return _mapper.Map<ProductDetailsViewModel>(readProdutoDto);
+            var readProductDto = await _productApiClient.PostProductAsync(createProductDto);
+            return _mapper.Map<ProductDetailsViewModel>(readProductDto);
         }
 
         public async Task<Result> DeleteAsync(int id) => await _productApiClient.DeleteProductAsync(id);
