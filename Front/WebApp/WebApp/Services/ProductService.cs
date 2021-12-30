@@ -40,9 +40,9 @@ namespace WebApp.Services
             return _mapper.Map<ProductDetailsViewModel>(readProductDto);
         }
 
-        public async Task<ProductDetailsViewModel> AddAsync(ProductRegistrationViewModel produtoViewModel)
+        public async Task<ProductDetailsViewModel> AddAsync(ProductRegistrationViewModel productViewModel)
         {
-            var createProductDto = _mapper.Map<CreateProductDTO>(produtoViewModel);
+            var createProductDto = _mapper.Map<CreateProductDTO>(productViewModel);
 
             var readProductDto = await _productApiClient.PostProductAsync(createProductDto);
             return _mapper.Map<ProductDetailsViewModel>(readProductDto);
