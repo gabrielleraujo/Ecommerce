@@ -5,7 +5,7 @@ using WebApp.Clients.Interfaces;
 using WebApp.Services;
 using WebApp.Services.Interfaces;
 
-namespace WebApp.IoC
+namespace WebApp.Ioc
 {
     public static class DependencyInjection
     {

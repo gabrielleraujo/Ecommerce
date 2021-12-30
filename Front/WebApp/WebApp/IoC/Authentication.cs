@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace WebApp.IoC
+namespace WebApp.Ioc
 {
     public static class Authentication
     {

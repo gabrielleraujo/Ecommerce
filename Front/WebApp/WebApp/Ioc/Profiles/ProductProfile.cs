@@ -2,7 +2,7 @@
 using Ecommerce.CrossCutting.DTO.Product;
 using WebApp.ViewModels;
 
-namespace WebApp.IoC.Profiles
+namespace WebApp.Ioc.Profiles
 {
     public class ProductProfile : Profile
     {
