@@ -31,12 +31,15 @@ namespace Ecommerce.API.Controllers
         /// 
         /// <response code="201">Returns the newly purchase</response>
         /// <response code="400">If the item is null</response>
+        /// <response code="401">If the user is unauthorized</response>
+        /// <response code="422">If no one valid address can be associated with this purchase</response>
         /// <response code="500">If an internal server error occurred</response>
         [HttpPost]
-        //[Authorize]
-        [SwaggerOperation(Summary = "Make purchase and, loads its properties")]
+        [Authorize]
+        [SwaggerOperation(Summary = "Make a purchase, and loads its properties")]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(ReadPurchaseDTO))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationErrorResponse))]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status422UnprocessableEntity, Type = typeof(UnprocessableEntityErrorResponse))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(InternalServerErrorResponse))]
         public IActionResult MakePurchase(CreatePurchaseDTO createPurchaseDto)
@@ -47,7 +50,7 @@ namespace Ecommerce.API.Controllers
 
 
         [HttpGet("get-has-no-summary")]
-        [SwaggerOperation(Summary = "Lists all purchases that do not yet have a Summary, and loads its properties.")]
+        [SwaggerOperation(Summary = "Lists all purchases that do not yet have a Summary, and loads its properties")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IList<ReadPurchaseDTO>))]
         public IActionResult GetHasNoSummary()
         {

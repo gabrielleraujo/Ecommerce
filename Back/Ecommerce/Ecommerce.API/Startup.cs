@@ -44,8 +44,8 @@ namespace Ecommerce.API
                 .AllowAnyMethod()
                 .AllowAnyHeader()
             );
-            app.UseAuthentication();
-            app.UseAuthorization();
+
+            app.UseJwt();
             
             app.UseEndpoints(endpoints =>
             {

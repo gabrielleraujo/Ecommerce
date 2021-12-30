@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -31,6 +32,12 @@ namespace Ecommerce.Ioc.Extensions
                         ValidateAudience = false
                     };
                 });
+        }
+
+        public static void UseJwt(this IApplicationBuilder app)
+        {
+            app.UseAuthentication();
+            app.UseAuthorization();
         }
     }
 }
