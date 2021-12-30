@@ -1,15 +1,15 @@
-﻿using Microsoft.AspNetCore.Http;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Linq;
+using System.Text;
 using System;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 using FluentResults;
 using WebApp.Clients.Interfaces;
 using Ecommerce.CrossCutting.DTO.User;
-using System.Text;
-using Newtonsoft.Json;
 
 namespace WebApp.Clients.HttpClients
 {

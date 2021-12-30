@@ -1,13 +1,13 @@
-﻿using AutoMapper;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using AutoMapper;
+using FluentResults;
 using Ecommerce.CrossCutting.DTO.User;
 using WebApp.Services.Interfaces;
 using WebApp.Clients.Interfaces;
 using WebApp.ViewModels;
-using FluentResults;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication;
 
 namespace WebApp.Services
 {
@@ -26,22 +26,22 @@ namespace WebApp.Services
 
         public async Task<Result<string>> AuthenticateAsync(LoginViewModel loginViewModel)
         {
-            LoginDTO loginDto = _mapper.Map<LoginDTO>(loginViewModel);
+            var loginDto = _mapper.Map<LoginDTO>(loginViewModel);
 
             var token = await _authApiClient.AuthenticateAsync(loginDto);
 
             if (token.IsSuccess) 
             { 
                 var claims = ClaimsService.CreateClaims(loginDto, token.Value);
-                _accessor.HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claims);
+
+                await _accessor.HttpContext.SignInAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme, 
+                    claims);
             }
 
             return token;
         }
 
-        public async Task LogoutAsync()
-        {
-            _accessor.HttpContext.SignOutAsync();
-        }
+        public async Task LogoutAsync() { await _accessor.HttpContext.SignOutAsync(); }
     }
 }

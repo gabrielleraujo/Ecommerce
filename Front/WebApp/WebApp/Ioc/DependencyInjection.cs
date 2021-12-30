@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net.Http;
 using Microsoft.Extensions.DependencyInjection;
 using WebApp.Clients.HttpClients;
 using WebApp.Clients.Interfaces;
@@ -10,7 +9,7 @@ namespace WebApp.IoC
 {
     public static class DependencyInjection
     {
-        public static void AddDependencyInjectionWebApp(this IServiceCollection services)
+        public static void AddDependencyInjection(this IServiceCollection services)
         {
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

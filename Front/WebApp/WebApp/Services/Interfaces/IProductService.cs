@@ -8,11 +8,8 @@ namespace WebApp.Services.Interfaces
     public interface IProductService
     {
         Task<IList<ProductDetailsViewModel>> ListAsync();
-
-        Task<HomeViewModel> IndexAsync();
-
+        Task<ProductListViewModel> IndexAsync();
         Task<ProductDetailsViewModel> GetByIdAsync(int id);
-
         Task<ProductDetailsViewModel> AddAsync(ProductRegistrationViewModel produtoViewModel);
         Task<Result> DeleteAsync(int id);
     }

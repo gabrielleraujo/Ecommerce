@@ -14,10 +14,7 @@ namespace WebApp.Services
                 new Claim("Token", token)
             },
             CookieAuthenticationDefaults.AuthenticationScheme);
-
-            var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
-
-            return claimsPrincipal;
+            return new ClaimsPrincipal(claimsIdentity);
         }
     }
 }

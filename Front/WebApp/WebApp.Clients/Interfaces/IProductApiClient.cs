@@ -1,9 +1,7 @@
 ﻿using Ecommerce.CrossCutting.DTO.Product;
 using FluentResults;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
-
 
 namespace WebApp.Clients.Interfaces
 {
@@ -11,7 +9,7 @@ namespace WebApp.Clients.Interfaces
     {
         Task<IList<ReadProductDTO>> GetProductsAsync();
         Task<ReadProductDTO> GetProductByIdAsync(int id);
-        public Task<ReadProductDTO> PostProductAsync(HttpContent produto);
+        Task<ReadProductDTO> PostProductAsync(CreateProductDTO productDto);
         Task<Result> DeleteProductAsync(int id);
     }
 }

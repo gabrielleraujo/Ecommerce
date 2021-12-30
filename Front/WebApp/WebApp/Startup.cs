@@ -4,7 +4,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebApp.IoC;
-using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace WebApp
 {
@@ -20,22 +19,13 @@ namespace WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpContextAccessor();
-            services.AddDependencyInjectionWebApp();
-
-            services
-                .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(x =>
-                {
-                    x.LoginPath = "/Authentication/Login";
-                    x.LogoutPath = "/Authentication/Logout";
-                });
-
+            services.AddDependencyInjection();
+            services.AddCookieAuthentication();
             services.AddControllersWithViews();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-
             if (env.IsDevelopment()) { app.UseDeveloperExceptionPage(); }
             else
             {

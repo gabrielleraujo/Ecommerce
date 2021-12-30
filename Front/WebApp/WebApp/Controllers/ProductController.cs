@@ -16,11 +16,7 @@ namespace WebApp.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> Index()
-        {
-            var homeViewModel = await _productService.IndexAsync();
-            return View(homeViewModel);
-        }
+        public async Task<IActionResult> Index() => View(await _productService.IndexAsync());
 
 
         [HttpGet]
@@ -33,17 +29,12 @@ namespace WebApp.Controllers
 
 
         [HttpGet]
-        public IActionResult Registration()
-        {
-            return View(new ProductRegistrationViewModel());
-        }
-
+        public IActionResult Registration() => View(new ProductRegistrationViewModel());
 
         [HttpPost]
         public async Task<IActionResult> Registration(ProductRegistrationViewModel productRegistrationViewModel)
         {
-            var productViewModel = await _productService.AddAsync(productRegistrationViewModel);
-
+            await _productService.AddAsync(productRegistrationViewModel);
             return RedirectToAction("Index");
         }
 
@@ -54,7 +45,6 @@ namespace WebApp.Controllers
         {
             var result = await _productService.DeleteAsync(id);
             if (result.IsFailed) { return NotFound(); }
-
             return  RedirectToAction("Registration");
         }
     }

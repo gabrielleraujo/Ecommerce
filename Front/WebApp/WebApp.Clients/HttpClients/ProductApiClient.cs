@@ -1,8 +1,10 @@
-﻿using Ecommerce.CrossCutting.DTO.Product;
-using FluentResults;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
+using FluentResults;
+using Newtonsoft.Json;
+using Ecommerce.CrossCutting.DTO.Product;
 using WebApp.Clients.Interfaces;
 
 namespace WebApp.Clients.HttpClients
@@ -32,14 +34,11 @@ namespace WebApp.Clients.HttpClients
             return await response.Content.ReadAsAsync<List<ReadProductDTO>>();
         }
 
-        async public Task<ReadProductDTO> PostProductAsync(HttpContent produto)
+        async public Task<ReadProductDTO> PostProductAsync(CreateProductDTO productDto)
         {
-            //the base address already defined in the client
-            //This is the remaining part of the address.
-            //We are passing the JSON value to the HTTP POST here.
-            var response = await _httpClient.PostAsync("product", produto);
-            response.EnsureSuccessStatusCode();
+            StringContent content = new StringContent(JsonConvert.SerializeObject(productDto), Encoding.UTF8, "application/json");
 
+            var response = await _httpClient.PostAsync("product", content);
             return response.IsSuccessStatusCode ? await response.Content.ReadAsAsync<ReadProductDTO>() : null;
         }
 

@@ -17,12 +17,10 @@ namespace WebApp.Controllers
             _userService = userService;
         }
 
+
         [HttpGet]
-        public async Task<IActionResult> Index()
-        {
-            var userViewModel = await _userService.IndexAsync();
-            return View(userViewModel);
-        }
+        public async Task<IActionResult> Index() => View(await _userService.IndexAsync());
+
 
         [HttpGet]
         public async Task<IActionResult> List()
@@ -30,6 +28,7 @@ namespace WebApp.Controllers
             var userViewModel = await _userService.ListAsync();
             return View(userViewModel);
         }
+
 
         [HttpGet]
         [Route("[controller]/Details/{id:int}")]
@@ -39,27 +38,24 @@ namespace WebApp.Controllers
             return View(userViewModel);
         }
 
+
         [HttpGet]
-        public IActionResult Registration()
-        {
-            return View(new UserRegistrationViewModel());
-        }
+        public IActionResult Registration() => View(new UserRegistrationViewModel());
 
         [HttpPost]
         public async Task<IActionResult> Registration(UserRegistrationViewModel userRegistrationViewModel)
         {
             await _userService.AddAsync(userRegistrationViewModel);
-
             return RedirectToAction("Index");
         }
+
 
         [HttpGet]
         [Route("[controller]/Delete/{id:int}")]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
-            Result result = await _userService.DeleteAsync(id);
+            var result = await _userService.DeleteAsync(id);
             if (result.IsFailed) { return NotFound(); }
-
             return  RedirectToAction("Registration");
         }
     }

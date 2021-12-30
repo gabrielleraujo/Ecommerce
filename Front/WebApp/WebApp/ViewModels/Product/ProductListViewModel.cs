@@ -2,7 +2,7 @@
 
 namespace WebApp.ViewModels
 {
-    public class HomeViewModel
+    public class ProductListViewModel
     {
         public IList<ProductHomeViewModel> Products { get; set; }
     }

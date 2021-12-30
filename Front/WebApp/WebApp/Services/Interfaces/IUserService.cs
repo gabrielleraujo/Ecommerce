@@ -10,7 +10,6 @@ namespace WebApp.Services.Interfaces
         Task<UserListViewModel> IndexAsync();
         Task<IList<UserDetailsViewModel>> ListAsync();
         Task<UserDetailsViewModel> GetByIdAsync(int id);
-
         Task<UserDetailsViewModel> AddAsync(UserRegistrationViewModel produtoViewModel);
         Task<Result> DeleteAsync(int id);
     }

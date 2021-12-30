@@ -14,11 +14,9 @@ namespace WebApp.Controllers
             _authService = authService;
         }
 
+
         [HttpGet]
-        public IActionResult Login()
-        {
-            return View(new LoginViewModel());
-        }
+        public IActionResult Login() => View(new LoginViewModel());
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel loginViewModel)
@@ -33,6 +31,7 @@ namespace WebApp.Controllers
 
             return RedirectToAction("Index", "User");
         }
+
 
         [HttpGet]
         public async Task<IActionResult> Logout()

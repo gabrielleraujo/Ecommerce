@@ -1,12 +1,9 @@
-﻿using AutoMapper;
-using FluentResults;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using WebApp.Clients.Interfaces;
+using AutoMapper;
+using FluentResults;
 using Ecommerce.CrossCutting.DTO.Product;
+using WebApp.Clients.Interfaces;
 using WebApp.ViewModels;
 using WebApp.Services.Interfaces;
 
@@ -23,43 +20,34 @@ namespace WebApp.Services
             _mapper = mapper;
         }
 
-        public async Task<HomeViewModel> IndexAsync()
+        public async Task<ProductListViewModel> IndexAsync()
         {
-            var produtos = await _productApiClient.GetProductsAsync();
+            var readProdutoDto = await _productApiClient.GetProductsAsync();
 
-            IList<ProductHomeViewModel> produtosHomeViewModel = _mapper.Map<IList<ProductHomeViewModel>>(produtos);
-
-            var model = new HomeViewModel { Products = produtosHomeViewModel };
-
-            return model;
+            var productHomeViewModel = _mapper.Map<IList<ProductHomeViewModel>>(readProdutoDto);
+            return new ProductListViewModel { Products = productHomeViewModel };
         }
 
         public async Task<IList<ProductDetailsViewModel>> ListAsync()
         {
-            var produtos = await _productApiClient.GetProductsAsync();
-            return _mapper.Map<IList<ProductDetailsViewModel>>(produtos); ;
+            var readProdutoDto = await _productApiClient.GetProductsAsync();
+            return _mapper.Map<IList<ProductDetailsViewModel>>(readProdutoDto); ;
         }
 
         public async Task<ProductDetailsViewModel> GetByIdAsync(int id)
         {
-            ReadProductDTO produto = await _productApiClient.GetProductByIdAsync(id);
-            return _mapper.Map<ProductDetailsViewModel>(produto);
+            var readProdutoDto = await _productApiClient.GetProductByIdAsync(id);
+            return _mapper.Map<ProductDetailsViewModel>(readProdutoDto);
         }
 
         public async Task<ProductDetailsViewModel> AddAsync(ProductRegistrationViewModel produtoViewModel)
         {
-            CreateProductDTO produto = _mapper.Map<CreateProductDTO>(produtoViewModel);
+            var createProductDto = _mapper.Map<CreateProductDTO>(produtoViewModel);
 
-            //JsonConvert.SerilizeObject() will convert your custom class to JSON
-            StringContent content = new StringContent(JsonConvert.SerializeObject(produto), Encoding.UTF8, "application/json");
-
-            var readProdutoDto = await _productApiClient.PostProductAsync(content);
+            var readProdutoDto = await _productApiClient.PostProductAsync(createProductDto);
             return _mapper.Map<ProductDetailsViewModel>(readProdutoDto);
         }
 
-        public async Task<Result> DeleteAsync(int id)
-        {
-            return await _productApiClient.DeleteProductAsync(id);
-        }
+        public async Task<Result> DeleteAsync(int id) => await _productApiClient.DeleteProductAsync(id);
     }
 }
