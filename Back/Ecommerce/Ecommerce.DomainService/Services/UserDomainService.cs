@@ -5,6 +5,7 @@ using Ecommerce.CrossCutting.DTO.User;
 using Ecommerce.Data.Entities;
 using FluentResults;
 using System.Collections.Generic;
+using System;
 
 namespace Ecommerce.DomainService.Services
 {
@@ -22,6 +23,12 @@ namespace Ecommerce.DomainService.Services
         public ReadUserDTO Add(CreateUserDTO createUserDto)
         {
             var user = _mapper.Map<User>(createUserDto);
+
+            if (_userRepository.GetByEmail(user.Email) != null)
+            {
+                throw new ArgumentException("This email is already in use.");
+            }
+
             _userRepository.Add(user);
 
             return _mapper.Map<ReadUserDTO>(user);
@@ -53,6 +60,7 @@ namespace Ecommerce.DomainService.Services
         public IList<ReadUserDTO> List()
         {
             var users = _userRepository.List();
+
             return users != null ? _mapper.Map<IList<ReadUserDTO>>(users) : null;
         }
 

@@ -56,7 +56,7 @@ namespace WebApp.Controllers
         {
             var result = await _userService.DeleteAsync(id);
             if (result.IsFailed) { return NotFound(); }
-            return  RedirectToAction("Registration");
+            return  RedirectToAction("Index");
         }
     }
 }

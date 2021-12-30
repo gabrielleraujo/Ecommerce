@@ -8,7 +8,7 @@ namespace Ecommerce.Ioc.Extensions
 {
     public static class Authentication
     {
-        public static void ConfigureAuthentication(this IServiceCollection services, IConfiguration configuration)
+        public static void AddJWTAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
             var key = Encoding.ASCII.GetBytes(configuration.GetValue<string>("Keys:Secret"));
 

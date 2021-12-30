@@ -24,6 +24,6 @@ namespace WebApp.ViewModels
         [Compare("Password")]
         public string RePassword { get; set; }
 
-        public int AddressId { get; set; }
+        public int? AddressId { get; set; }
     }
 }

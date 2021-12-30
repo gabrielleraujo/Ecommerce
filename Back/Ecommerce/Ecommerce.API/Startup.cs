@@ -20,11 +20,11 @@ namespace Ecommerce.API
         {
             services.AddCors();
             services.AddControllers();
-            services.ConfigureAuthentication(Configuration);
-            services.ConfigureDataBase(Configuration);
+            services.AddJWTAuthentication(Configuration);
+            services.AddDataBase(Configuration);
             services.AddDependencyInjection();
             services.AddApiVersioning();
-            services.ConfigureSwaggerGen();
+            services.AddMySwaggerGen();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -32,11 +32,7 @@ namespace Ecommerce.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ecommerce v1.0");
-                    c.SwaggerEndpoint("/swagger/v2/swagger.json", "Ecommerce v2.0");
-                });
+                app.UseMySwagger();
             }
 
             app.UseHttpsRedirection();
@@ -48,7 +44,7 @@ namespace Ecommerce.API
                 .AllowAnyMethod()
                 .AllowAnyHeader()
             );
-            app.UseAuthentication(); // precisa vir antes do app.UseAuthorization();
+            app.UseAuthentication();
             app.UseAuthorization();
             
             app.UseEndpoints(endpoints =>

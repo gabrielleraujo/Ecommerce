@@ -34,7 +34,7 @@ namespace Ecommerce.API.Controllers
         /// <response code="500">If an internal server error occurred</response>
         [HttpPost]
         //[Authorize]
-        [SwaggerOperation(Summary = "Make purchase")]
+        [SwaggerOperation(Summary = "Make purchase and, loads its properties")]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(ReadPurchaseDTO))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationErrorResponse))]
         [ProducesResponseType(StatusCodes.Status422UnprocessableEntity, Type = typeof(UnprocessableEntityErrorResponse))]
@@ -47,7 +47,7 @@ namespace Ecommerce.API.Controllers
 
 
         [HttpGet("get-has-no-summary")]
-        [SwaggerOperation(Summary = "Lists all purchases that do not yet have a Summary.")]
+        [SwaggerOperation(Summary = "Lists all purchases that do not yet have a Summary, and loads its properties.")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IList<ReadPurchaseDTO>))]
         public IActionResult GetHasNoSummary()
         {
@@ -57,7 +57,7 @@ namespace Ecommerce.API.Controllers
 
 
         [HttpGet]
-        [SwaggerOperation(Summary = "List all purchases")]
+        [SwaggerOperation(Summary = "List all purchases, and loads its properties")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IList<ReadPurchaseDTO>))]
         public IActionResult List()
         {
@@ -67,7 +67,7 @@ namespace Ecommerce.API.Controllers
 
 
         [HttpGet("list-user-purchases/{userId:int}")]
-        [SwaggerOperation(Summary = "List all user purchases by userId")]
+        [SwaggerOperation(Summary = "List all user purchases by userId, and loads its properties")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IList<ReadPurchaseDTO>))]
         public IActionResult ListUserPurchases([FromRoute] int userId)
         {
@@ -77,7 +77,7 @@ namespace Ecommerce.API.Controllers
 
 
         [HttpGet("{id}")]
-        [SwaggerOperation(Summary = "Search a purchase by id")]
+        [SwaggerOperation(Summary = "Search a purchase by id, and loads its properties")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ReadPurchaseDTO))]
         public IActionResult GetById([FromRoute] int id)
         {

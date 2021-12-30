@@ -7,7 +7,7 @@ namespace Ecommerce.Ioc.Extensions
 {
     public static class DataBase
     {
-        public static void ConfigureDataBase(this IServiceCollection services, IConfiguration configuration)
+        public static void AddDataBase(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<EcommerceContext>(opt => opt
                         .UseSqlServer(configuration.GetConnectionString("EcommerceConnection")));
