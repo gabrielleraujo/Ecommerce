@@ -33,13 +33,13 @@ namespace Ecommerce.API.Controllers
         ///     POST
         ///     {
         ///        "name": "João",
-        ///        "surmane": Souza,
+        ///        "surname": Souza,
         ///        "email": joao@gmail.com,
         ///        "username": "jao",
         ///        "password": 123,
         ///        "repassword": 123,
         ///        "role": "comprador",
-        ///        "adressId": 1
+        ///        "addressId": 1
         ///     }
         ///
         /// </remarks>

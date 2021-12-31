@@ -6,6 +6,7 @@ using Ecommerce.Data.Entities;
 using FluentResults;
 using System.Collections.Generic;
 using System;
+using Microsoft.Extensions.Logging;
 
 namespace Ecommerce.DomainService.Services
 {
@@ -13,11 +14,13 @@ namespace Ecommerce.DomainService.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
+        private readonly ILogger<UserDomainService> _logger;
 
-        public UserDomainService(IUserRepository userRepository, IMapper mapper)
+        public UserDomainService(IUserRepository userRepository, IMapper mapper, ILogger<UserDomainService> logger)
         {
             _userRepository = userRepository;
             _mapper = mapper;
+            _logger = logger;
         }
 
         public ReadUserDTO Add(CreateUserDTO createUserDto)
@@ -26,7 +29,9 @@ namespace Ecommerce.DomainService.Services
 
             if (_userRepository.GetByEmail(user.Email) != null)
             {
-                throw new ArgumentException("This email is already in use.");
+                var exception = new ArgumentException("This email is already in use.");
+                _logger.LogError(exception, exception.Message);
+                throw exception;
             }
 
             _userRepository.Add(user);
