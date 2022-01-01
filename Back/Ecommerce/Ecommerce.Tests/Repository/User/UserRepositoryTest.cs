@@ -51,7 +51,7 @@ namespace Ecommerce.Tests.Repository.User
             userRepository.Add(createUserDto);
 
             // Assert
-            var usersInDB = userRepository.List();
+            var usersInDB = userRepository.GetByEmail(createUserDto.Email);
             Assert.NotNull(usersInDB);
         }
 
