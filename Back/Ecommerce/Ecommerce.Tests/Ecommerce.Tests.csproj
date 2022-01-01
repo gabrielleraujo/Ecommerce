@@ -27,6 +27,7 @@
     <ProjectReference Include="..\Ecommerce.Data\Ecommerce.Data.csproj" />
     <ProjectReference Include="..\Ecommerce.DomainService\Ecommerce.DomainService.csproj" />
     <ProjectReference Include="..\Ecommerce.Ioc\Ecommerce.Ioc.csproj" />
+    <ProjectReference Include="..\Ecommerce.Repository\Ecommerce.Repository.csproj" />
   </ItemGroup>
 
 </Project>
