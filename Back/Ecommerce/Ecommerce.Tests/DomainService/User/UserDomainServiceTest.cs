@@ -11,7 +11,7 @@ using Moq;
 using FluentAssertions;
 using Ecommerce.Tests.Configurations;
 
-namespace Ecommerce.Tests.User
+namespace Ecommerce.Tests.DomainService.User
 {
     public class UserDomainServiceTest
     {
@@ -35,12 +35,12 @@ namespace Ecommerce.Tests.User
             var logger = mockLogger.Object;
 
             var userDomainService = new UserDomainService(userRepository, mapper, logger);
-            userDomainService.Add(createUserDto);
 
             // Act
-            var usersInDB = userRepository.List();
+            userDomainService.Add(createUserDto);
 
             // Assert
+            var usersInDB = userRepository.GetByEmail(createUserDto.Email);
             Assert.NotNull(usersInDB);
         }
 
@@ -76,9 +76,9 @@ namespace Ecommerce.Tests.User
             Assert.Equal(expectedMessageException, exeption.Message);
         }
 
-        [Fact(DisplayName = "Add_ReturnTheReadDTO_WhenEmailIsNotExistsInDB")]
+        [Fact(DisplayName = "Add_ReturnTheReadDTO_WhenTheEmailDoesNotYetExistInTheDB")]
         [Trait("UserDomainService", "DomainService Tests")]
-        public void Add_ReturnTheReadDTO_WhenEmailIsNotExistsInDB()
+        public void Add_ReturnTheReadDTO_WhenTheEmailDoesNotYetExistInTheDB()
         {
             //Arrange
 
