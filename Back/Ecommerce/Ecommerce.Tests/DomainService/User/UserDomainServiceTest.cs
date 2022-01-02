@@ -5,11 +5,11 @@ using Ecommerce.Repository.EF;
 using Ecommerce.CrossCutting.DTO.User;
 using Ecommerce.DomainService.Services;
 using Ecommerce.Repository.Interfaces;
+using Ecommerce.Tests.Configurations;
 using System;
 using Xunit;
 using Moq;
 using FluentAssertions;
-using Ecommerce.Tests.Configurations;
 
 namespace Ecommerce.Tests.DomainService.User
 {
@@ -27,14 +27,12 @@ namespace Ecommerce.Tests.DomainService.User
             var mapper = mapperConfig.CreateMapper();
 
             var options = new DbContextOptionsBuilder<EcommerceContext>().UseInMemoryDatabase("EcommerceContext").Options;
-
             var context = new EcommerceContext(options);
             var userRepository = new UserRepository(context);
 
             var mockLogger = new Mock<ILogger<UserDomainService>>();
-            var logger = mockLogger.Object;
 
-            var userDomainService = new UserDomainService(userRepository, mapper, logger);
+            var userDomainService = new UserDomainService(userRepository, mapper, mockLogger.Object);
 
             // Act
             userDomainService.Add(createUserDto);
@@ -56,17 +54,15 @@ namespace Ecommerce.Tests.DomainService.User
             var mapper = mapperConfig.CreateMapper();
 
             var options = new DbContextOptionsBuilder<EcommerceContext>().UseInMemoryDatabase("EcommerceContext").Options;
-
             var context = new EcommerceContext(options);
             var userRepository = new UserRepository(context);
 
             var mockLogger = new Mock<ILogger<UserDomainService>>();
-            var logger = mockLogger.Object;
 
-            var userDomainService = new UserDomainService(userRepository, mapper, logger);
+            var userDomainService = new UserDomainService(userRepository, mapper, mockLogger.Object);
             var expectedMessageException = "This email is already in use.";
 
-            var readUserDto = userDomainService.Add(createUserDto);
+            userDomainService.Add(createUserDto);
 
             // Act
             Action act = () => userDomainService.Add(createUserDto);
@@ -90,13 +86,10 @@ namespace Ecommerce.Tests.DomainService.User
             var user = mapper.Map<Data.Entities.User>(createUserDto);
             var expectedReadUserDto = mapper.Map<ReadUserDTO>(user);
 
-            var userRepositoryMock = new Mock<IUserRepository>();
-            var userRepository = userRepositoryMock.Object;
-            
+            var mockUserRepository = new Mock<IUserRepository>();
             var mockLogger = new Mock<ILogger<UserDomainService>>();
-            var logger = mockLogger.Object;
 
-            var userDomainService = new UserDomainService(userRepository, mapper, logger);
+            var userDomainService = new UserDomainService(mockUserRepository.Object, mapper, mockLogger.Object);
             
             // Act
             var readUserDtoResult = userDomainService.Add(createUserDto);
@@ -116,22 +109,16 @@ namespace Ecommerce.Tests.DomainService.User
             var mapperConfig = AutoMapperConfiguration.Configure();
             var mapper = mapperConfig.CreateMapper();
 
-            var user = mapper.Map<Data.Entities.User>(createUserDto);
-            var expectedReadUserDto = mapper.Map<ReadUserDTO>(user);
-
-            var userRepositoryMock = new Mock<IUserRepository>();
-            var userRepository = userRepositoryMock.Object;
-
+            var mockUserRepository = new Mock<IUserRepository>();
             var mockLogger = new Mock<ILogger<UserDomainService>>();
-            var logger = mockLogger.Object;
 
-            var userDomainService = new UserDomainService(userRepository, mapper, logger);
+            var userDomainService = new UserDomainService(mockUserRepository.Object, mapper, mockLogger.Object);
 
             // Act
-            var readUserDtoResult = userDomainService.Add(createUserDto);
+            userDomainService.Add(createUserDto);
 
             // Assert
-            userRepositoryMock.Verify(x => x.GetByEmail(It.IsAny<string>()), Times.Once());
+            mockUserRepository.Verify(x => x.GetByEmail(It.IsAny<string>()), Times.Once());
         }
 
         private CreateUserDTO CreatJoaoUserDto()

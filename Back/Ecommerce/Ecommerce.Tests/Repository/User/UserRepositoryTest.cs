@@ -1,6 +1,6 @@
-﻿using Ecommerce.Data.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using Ecommerce.Data.Context;
 using Ecommerce.Repository.EF;
-using Microsoft.EntityFrameworkCore;
 using Moq;
 using Xunit;
 
@@ -17,10 +17,9 @@ namespace Ecommerce.Tests.Repository.User
 
             var user = CreatGabiUser();
 
-            var options = new DbContextOptionsBuilder<EcommerceContext>().UseInMemoryDatabase("EcommerceContext").Options;
-
             var mockDbSetUser = new Mock<DbSet<Data.Entities.User>>();
 
+            var options = new DbContextOptionsBuilder<EcommerceContext>().UseInMemoryDatabase("EcommerceContext").Options;
             var mockContext = new Mock<EcommerceContext>(options);
             mockContext.Setup(x => x.Users).Returns(mockDbSetUser.Object);
 
@@ -43,7 +42,6 @@ namespace Ecommerce.Tests.Repository.User
             var createUserDto = CreatPedroUser();
 
             var options = new DbContextOptionsBuilder<EcommerceContext>().UseInMemoryDatabase("EcommerceContext").Options;
-
             var context = new EcommerceContext(options);
             var userRepository = new UserRepository(context);
 
