@@ -3,6 +3,10 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Z.EntityFramework.Plus.EFCore" Version="5.13.5" />
+  </ItemGroup>
 	
 	<ItemGroup>
 		<ProjectReference Include="..\Ecommerce.Data\Ecommerce.Data.csproj" />

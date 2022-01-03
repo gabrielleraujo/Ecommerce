@@ -22,21 +22,18 @@ namespace Ecommerce.DomainService.Services
         public IList<ReadPurchaseDTO> List()
         {
             IList<Purchase> purchases = _purchaseRepository.List();
-
             return _mapper.Map<IList<ReadPurchaseDTO>>(purchases);
         }
 
         public ReadPurchaseDTO GetById(int id)
         {
             var purchase = _purchaseRepository.GetById(id);
-
             return _mapper.Map<ReadPurchaseDTO>(purchase);
         }
 
         public IList<ReadPurchaseDTO> GetHasNoSummary()
         {
             var purchases = _purchaseRepository.GetHasNoSummary();
-
             return _mapper.Map<IList<ReadPurchaseDTO>>(purchases);
         }
 
@@ -46,31 +43,22 @@ namespace Ecommerce.DomainService.Services
             purchase.Price = CalculateTotalPrice(createPurchaseDto.Products);
 
             _purchaseRepository.Add(purchase);
-
             return _mapper.Map<ReadPurchaseDTO>(purchase);
         }
 
-        private double CalculateTotalPrice(IList<CreatePurchaseItemDTO> purchaseItemsDto)
-        {
-            return purchaseItemsDto.Sum(x => x.Quantity * x.UnitPrice);
-        }
+        private double CalculateTotalPrice(IList<CreatePurchaseItemDTO> purchaseItemsDto) =>
+            purchaseItemsDto.Sum(x => x.Quantity * x.UnitPrice);
 
         public IList<ReadPurchaseDTO> ListUserPurchases(int userId)
         {
             var purchases = _purchaseRepository.ListUserPurchases(userId);
-
             return _mapper.Map<IList<ReadPurchaseDTO>>(purchases);
         }
 
         public void SetHasSummary(bool value, IList<ReadPurchaseDTO> readPurchasesDto)
         {
             var purchases = _mapper.Map<IList<Purchase>>(readPurchasesDto);
-
-            foreach (var item in purchases)
-            {
-                item.HasSummary = value;
-            }
-            _purchaseRepository.Update(purchases);
+            _purchaseRepository.Update(purchases, value);
         }
     }
 }

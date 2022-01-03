@@ -68,8 +68,7 @@ namespace Ecommerce.Tests.DomainService.User
             Action act = () => userDomainService.Add(createUserDto);
 
             // Assert
-            var exeption = Assert.Throws<ArgumentException>(act);
-            Assert.Equal(expectedMessageException, exeption.Message);
+            act.Should().Throw<ArgumentException>().WithMessage(expectedMessageException);
         }
 
         [Fact(DisplayName = "Add_ReturnTheReadDTO_WhenTheEmailDoesNotYetExistInTheDB")]

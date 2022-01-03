@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using Z.EntityFramework.Plus; // Don't forget to include this.
 
 namespace Ecommerce.Repository.EF
 {
@@ -25,10 +26,11 @@ namespace Ecommerce.Repository.EF
             _context.SaveChanges();
         }
 
-        public void Update(IList<Purchase> purchases)
+        public void Update(IList<Purchase> purchases, bool hasSumaryValue)
         {
-            _context.Purchases.UpdateRange(purchases);
-            _context.SaveChanges();
+            var ids = purchases.Select(x => x.Id);
+            _context.Purchases.Where(x => ids.Contains(x.Id))
+                     .Update(p => new Purchase() { HasSummary = hasSumaryValue });
         }
 
         public IList<Purchase> ListUserPurchases(int userId)

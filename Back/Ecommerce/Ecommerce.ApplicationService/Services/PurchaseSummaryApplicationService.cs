@@ -32,21 +32,15 @@ namespace Ecommerce.ApplicationService.Services
 
         public Result Build()
         {
-            var purchases = _purchaseDomainService.GetHasNoSummary();
+            var readPurchasesDto = _purchaseDomainService.GetHasNoSummary();
 
-            if (purchases.Count == 0) { return Result.Fail("There are no purchases to summarize at the moment."); }
+            if (readPurchasesDto.Count == 0) { return Result.Fail("There are no purchases to summarize at the moment."); }
 
-            AddList(purchases);
+            _purchaseSummaryDomainService.AddList(readPurchasesDto);
 
-            _purchaseDomainService.SetHasSummary(true, purchases);
+            _purchaseDomainService.SetHasSummary(true, readPurchasesDto);
 
             return Result.Ok();
-        }
-
-        private void AddList(IList<ReadPurchaseDTO> readPurchasesDto)
-        {
-            _purchaseSummaryDomainService.AddList(readPurchasesDto);
-            _purchaseDomainService.SetHasSummary(true, readPurchasesDto);
         }
     }
 }

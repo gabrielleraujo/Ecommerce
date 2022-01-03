@@ -1,8 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using RestSharp;
 using System.Threading.Tasks;
-using Job.CrossCutting.DTO.Purchase;
-using System.Collections.Generic;
 
 namespace Job.Context
 {
@@ -23,7 +21,7 @@ namespace Job.Context
 
             var request = new RestRequest($"purchase-summary/build");
 
-            var response = await _client.ExecuteGetAsync<IList<ReadPurchaseDTO>>(request);
+            var response = await _client.ExecuteGetAsync(request);
 
             _logger.LogInformation($"StatusCode: {response.StatusCode}\n");
         }
