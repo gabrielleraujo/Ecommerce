@@ -5,6 +5,10 @@ namespace Job
 {
     internal class Program
     {
+        public Program()
+        {
+        }
+
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
@@ -14,7 +18,7 @@ namespace Job
             Host.CreateDefaultBuilder(args).ConfigureServices(
                 (context, services) =>
                 {
-                    services.ResolveDependencies(context.Configuration);
+                    services.ResolveDependencies();
                 });
     }
 }

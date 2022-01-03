@@ -24,10 +24,6 @@ C:\SistemasPessoais\EcommerceSegregadoV2\Job\Job\Job.Ioc\obj\Debug\net5.0\Job.Io
 C:\SistemasPessoais\EcommerceSegregadoV2\Job\Job\Job.Ioc\obj\Debug\net5.0\Job.Ioc.dll
 C:\SistemasPessoais\EcommerceSegregadoV2\Job\Job\Job.Ioc\obj\Debug\net5.0\ref\Job.Ioc.dll
 C:\SistemasPessoais\EcommerceSegregadoV2\Job\Job\Job.Ioc\obj\Debug\net5.0\Job.Ioc.pdb
-C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\obj\Debug\net5.0\Job.Ioc.GeneratedMSBuildEditorConfig.editorconfig
-C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\obj\Debug\net5.0\Job.Ioc.AssemblyInfoInputs.cache
-C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\obj\Debug\net5.0\Job.Ioc.AssemblyInfo.cs
-C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\obj\Debug\net5.0\Job.Ioc.csproj.CoreCompileInputs.cache
 C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\bin\Debug\net5.0\Job.Ioc.deps.json
 C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\bin\Debug\net5.0\Job.Ioc.dll
 C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\bin\Debug\net5.0\ref\Job.Ioc.dll
@@ -35,12 +31,14 @@ C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\bin\Debug\net5.0\Job.Io
 C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\bin\Debug\net5.0\Job.Context.dll
 C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\bin\Debug\net5.0\Job.DomainService.dll
 C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\bin\Debug\net5.0\Job.Service.dll
-C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\bin\Debug\net5.0\Job.CrossCutting.dll
 C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\bin\Debug\net5.0\Job.Context.pdb
 C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\bin\Debug\net5.0\Job.DomainService.pdb
 C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\bin\Debug\net5.0\Job.Service.pdb
-C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\bin\Debug\net5.0\Job.CrossCutting.pdb
 C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\obj\Debug\net5.0\Job.Ioc.csproj.AssemblyReference.cache
+C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\obj\Debug\net5.0\Job.Ioc.GeneratedMSBuildEditorConfig.editorconfig
+C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\obj\Debug\net5.0\Job.Ioc.AssemblyInfoInputs.cache
+C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\obj\Debug\net5.0\Job.Ioc.AssemblyInfo.cs
+C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\obj\Debug\net5.0\Job.Ioc.csproj.CoreCompileInputs.cache
 C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\obj\Debug\net5.0\Job.Ioc.csproj.CopyComplete
 C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\obj\Debug\net5.0\Job.Ioc.dll
 C:\SistemasPessoais\EcommerceSegregadoV3\Job\Job\Job.Ioc\obj\Debug\net5.0\ref\Job.Ioc.dll

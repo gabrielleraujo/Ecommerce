@@ -18,10 +18,10 @@ namespace Job.DomainService
             _logger = logger;
         }
 
-        public async Task GetHasNoSummaryAsync()
+        public async Task BuildSummaryAsync()
         {
             _logger.LogInformation(
-                   $"PurchaseDomainService Processing Service is started - {nameof(GetHasNoSummaryAsync)}.");
+                   $"PurchaseDomainService Processing Service is started - {nameof(BuildSummaryAsync)}.");
 
             await _purchaseClient.BuildSummaryAsync();
         }

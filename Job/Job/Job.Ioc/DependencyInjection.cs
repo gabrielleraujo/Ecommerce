@@ -2,7 +2,6 @@
 using Job.DomainService;
 using Job.Service;
 using Job.Service.Processes;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RestSharp;
 using System;
@@ -11,11 +10,10 @@ namespace Job.Ioc
 {
     public static class DependencyInjection
     {
-        public static void ResolveDependencies(this IServiceCollection services, IConfiguration configuration)
+        public static void ResolveDependencies(this IServiceCollection services)
         {
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            //services.AddSingleton<IRestClient>(new RestClient(configuration["URL_API_Ecommerce"]));
             services.AddSingleton<IRestClient>(new RestClient("https://localhost:5001/api/v1.0"));
 
             services.AddScoped<IPurchaseClient, PurchaseClient>();

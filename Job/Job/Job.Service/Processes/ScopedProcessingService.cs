@@ -38,7 +38,7 @@ namespace Job.Service.Processes
 
         public async Task StartAsync()
         {
-            await _purchaseDomainService.GetHasNoSummaryAsync();
+            await _purchaseDomainService.BuildSummaryAsync();
         }
     }
 }
