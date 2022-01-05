@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using System.Threading.Tasks;
 using AutoMapper;
 using FluentResults;
 using Ecommerce.CrossCutting.DTO.User;
@@ -35,8 +35,7 @@ namespace WebApp.Services
                 var claims = ClaimsService.CreateClaims(loginDto, token.Value);
 
                 await _accessor.HttpContext.SignInAsync(
-                    CookieAuthenticationDefaults.AuthenticationScheme, 
-                    claims);
+                    CookieAuthenticationDefaults.AuthenticationScheme, claims);
             }
 
             return token;

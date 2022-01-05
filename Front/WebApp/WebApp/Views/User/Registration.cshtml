@@ -24,7 +24,6 @@
                        asp-for="@Model.Surname">
                 <span asp-validation-for="@Model.Surname" class="text-danger"></span>
             </div>
-
             <div class="w-100"></div>
 
             <div class="form-group col-md-6">
@@ -47,7 +46,6 @@
                        asp-for="@Model.RePassword">
                 <span asp-validation-for="@Model.RePassword" class="text-danger"></span>
             </div>
-
             <div class="w-100"></div>
 
             <div class="form-group col-md-6">
@@ -58,16 +56,15 @@
             </div>
 
             <div class="form-group col-md-6">
+
                 <label class="control-label" for="AddressId">Address</label>
 
-                <select class="form-control single-select" name="Address"
-                        asp-for="@Model.AddressId">
+                <select class="form-control single-select" name="AddressId" asp-for="@Model.AddressId">
                     <option selected value="">[Select your address]</option>
                     <option value=@null>Select later</option>
                 </select>
                 <span asp-validation-for="@Model.AddressId" class="text-danger"></span>
             </div>
-
             <div class="w-100"></div>
 
             <div class="form-group">

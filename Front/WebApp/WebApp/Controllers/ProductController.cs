@@ -14,30 +14,33 @@ namespace WebApp.Controllers
             _productService = productService;
         }
 
-
         [HttpGet]
         public async Task<IActionResult> Index() => View(await _productService.IndexAsync());
 
+        [HttpGet]
+        public async Task<IActionResult> Registration()
+        {
+            var categories = await _productService.ListCategoriesAsync();
+            var colors = await _productService.ListColorsAsync();
+            var sizes = await _productService.ListSizesAsync();
+
+            return View(new ProductRegistrationViewModel(categories, colors, sizes)); 
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Registration(ProductRegistrationViewModel product)
+        {
+            await _productService.AddAsync(product);
+            return RedirectToAction("Index");
+        }
 
         [HttpGet]
         [Route("[controller]/Details/{id:int}")]
         public async Task<IActionResult> Details([FromRoute] int id)
         {
-            var productViewModel = await _productService.GetByIdAsync(id);
-            return View(productViewModel);
+            var product = await _productService.GetByIdAsync(id);
+            return View(product);
         }
-
-
-        [HttpGet]
-        public IActionResult Registration() => View(new ProductRegistrationViewModel());
-
-        [HttpPost]
-        public async Task<IActionResult> Registration(ProductRegistrationViewModel productRegistrationViewModel)
-        {
-            await _productService.AddAsync(productRegistrationViewModel);
-            return RedirectToAction("Index");
-        }
-
 
         [HttpGet]
         [Route("[controller]/Delete/{id:int}")]
@@ -45,7 +48,7 @@ namespace WebApp.Controllers
         {
             var result = await _productService.DeleteAsync(id);
             if (result.IsFailed) { return NotFound(); }
-            return  RedirectToAction("Registration");
+            return RedirectToAction("Index");
         }
     }
 }

@@ -3,6 +3,6 @@
     public class ReadColorDTO
     {
         public int Id { get; set; }
-        public virtual string ColorText { get; private set; }
+        public virtual string ColorText { get; set; }
     }
 }

@@ -14,24 +14,22 @@ namespace WebApp.Controllers
             _authService = authService;
         }
 
-
         [HttpGet]
         public IActionResult Login() => View(new LoginViewModel());
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel loginViewModel)
+        public async Task<IActionResult> Login(LoginViewModel login)
         {
-            var result = await _authService.AuthenticateAsync(loginViewModel);
+            var result = await _authService.AuthenticateAsync(login);
 
             if (result.IsFailed)
             {
                 TempData["Autenticated"] = result.Reasons[0].Message;
-                return View(loginViewModel);
+                return View(login);
             }
 
             return RedirectToAction("Index", "User");
         }
-
 
         [HttpGet]
         public async Task<IActionResult> Logout()

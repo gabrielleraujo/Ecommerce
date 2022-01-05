@@ -5,46 +5,44 @@
 @model ProductListViewModel;
 
 <div class="container">
-    <div class="text-left"
-         asp-controller="Product"
-         asp-action="Index"
+    <div class="text-left" 
+         asp-controller="Product" 
+         asp-action="Index" 
          method="get">
-        <div>
-            <h5 class="sessao">Products</h5>
-            <br />
-            @{
-                <div />
-                foreach (var product in @Model.Products)
-                {
-                    <div class="d-sm-inline-flex justify-content-between">
-                        <ul class="flex-grow-1">
-                            <li>
-                                <p>@product.Name</p>
-                                <p class="preco">price: R$@product.Price</p>
 
-                                <br />
-                                <div class="color: black">
-                                    <a asp-controller="Product"
-                                       asp-action="Details"
-                                       asp-route-id="@product.Id"
-                                       class="btn btn-info">
-                                        Details
-                                    </a>
-                                    <a asp-controller="Product"
-                                       asp-action="Purchase"
-                                       asp-route-id="@product.Id"
-                                       class="btn btn-success">
-                                        Purchase
-                                    </a>
-                                </div>
-                                <br />
+        <h5 class="sessao">Products</h5>
+        <br />
 
-                            </li>
-                        </ul>
-                    </div>
-                }
-            }
-        </div>
+        @foreach (var product in @Model.Products)
+        {
+            <div class="d-sm-inline-flex justify-content-around">
+
+                <ul class="flex-grow-1">
+                    <li>
+                        <p>@product.Name</p>
+                        <p class="preco">price: R$@product.Price</p>
+
+                        <br />
+                        <div class="color: black">
+                            <a asp-controller="Product"
+                                asp-action="Details"
+                                asp-route-id="@product.Id"
+                                class="btn btn-info">
+                                Details
+                            </a>
+                            <a asp-controller="Product"
+                                asp-action="Purchase"
+                                asp-route-id="@product.Id"
+                                class="btn btn-success">
+                                Purchase
+                            </a>
+                        </div>
+                        <br />
+
+                    </li>
+                </ul>
+
+            </div>
+        }
     </div>
-
 </div>

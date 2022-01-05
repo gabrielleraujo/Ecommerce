@@ -6,6 +6,7 @@ namespace WebApp.ViewModels
     {
         [Required]
         public string Name { get; set; }
+
         [Required]
         public string Surname { get; set; }
 
@@ -24,6 +25,7 @@ namespace WebApp.ViewModels
         [Compare("Password")]
         public string RePassword { get; set; }
 
+        [Required]
         public int? AddressId { get; set; }
     }
 }
