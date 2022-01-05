@@ -1,6 +1,6 @@
-﻿using System.Security.Claims;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Security.Claims;
 using Ecommerce.CrossCutting.DTO.User;
-using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace WebApp.Services
 {

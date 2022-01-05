@@ -6,6 +6,9 @@ using FluentResults;
 using Newtonsoft.Json;
 using Ecommerce.CrossCutting.DTO.Product;
 using WebApp.Clients.Interfaces;
+using Ecommerce.CrossCutting.DTO.Category;
+using Ecommerce.CrossCutting.DTO.Color;
+using Ecommerce.CrossCutting.DTO.Size;
 
 namespace WebApp.Clients.HttpClients
 {
@@ -18,6 +21,21 @@ namespace WebApp.Clients.HttpClients
             _httpClient = httpClient;
         }
 
+        public async Task<ReadProductDTO> PostProductAsync(CreateProductDTO productDto)
+        {
+            StringContent content = new StringContent(JsonConvert.SerializeObject(productDto), Encoding.UTF8, "application/json");
+
+            var response = await _httpClient.PostAsync("product", content);
+            return response.IsSuccessStatusCode ? await response.Content.ReadAsAsync<ReadProductDTO>() : null;
+        }
+
+        public async Task<Result> DeleteProductAsync(int id)
+        {
+            var response = await _httpClient.DeleteAsync($"product/{id}");
+
+            return response.IsSuccessStatusCode ? Result.Ok() : Result.Fail("Erro ao deletar produto.");
+        }
+
         public async Task<ReadProductDTO> GetProductByIdAsync(int id)
         {
             HttpResponseMessage response = await _httpClient.GetAsync($"product/{id}");
@@ -26,7 +44,7 @@ namespace WebApp.Clients.HttpClients
             return await response.Content.ReadAsAsync<ReadProductDTO>();
         }
 
-        async public Task<IList<ReadProductDTO>> GetProductsAsync()
+        public async Task<IList<ReadProductDTO>> GetProductsAsync()
         {
             HttpResponseMessage response = await _httpClient.GetAsync("product");
             response.EnsureSuccessStatusCode();
@@ -34,19 +52,28 @@ namespace WebApp.Clients.HttpClients
             return await response.Content.ReadAsAsync<List<ReadProductDTO>>();
         }
 
-        async public Task<ReadProductDTO> PostProductAsync(CreateProductDTO productDto)
+        public async Task<IList<ReadCategoryDTO>> GetCategoriesAsync()
         {
-            StringContent content = new StringContent(JsonConvert.SerializeObject(productDto), Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await _httpClient.GetAsync("category");
+            response.EnsureSuccessStatusCode();
 
-            var response = await _httpClient.PostAsync("product", content);
-            return response.IsSuccessStatusCode ? await response.Content.ReadAsAsync<ReadProductDTO>() : null;
+            return await response.Content.ReadAsAsync<List<ReadCategoryDTO>>();
         }
 
-        async public Task<Result> DeleteProductAsync(int id)
+        public async Task<IList<ReadColorDTO>> GetColorsAsync()
         {
-            var response = await _httpClient.DeleteAsync($"product/{id}");
+            HttpResponseMessage response = await _httpClient.GetAsync("color");
+            response.EnsureSuccessStatusCode();
 
-            return response.IsSuccessStatusCode ? Result.Ok() : Result.Fail("Erro ao deletar produto.");
+            return await response.Content.ReadAsAsync<List<ReadColorDTO>>();
+        }
+
+        public async Task<IList<ReadSizeDTO>> GetSizesAsync()
+        {
+            HttpResponseMessage response = await _httpClient.GetAsync("size");
+            response.EnsureSuccessStatusCode();
+
+            return await response.Content.ReadAsAsync<List<ReadSizeDTO>>();
         }
     }
 }

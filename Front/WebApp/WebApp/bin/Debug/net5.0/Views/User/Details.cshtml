@@ -4,20 +4,18 @@
 
 @model UserDetailsViewModel;
 
-<div class="text-left"
-     asp-controller="User"
-     asp-action="Details"
-     method="get">
-
+<div class="text-left" asp-controller="User" asp-action="Details" method="get">
     <div>
+
         <div>
             <h5 class="sessao">User Details</h5>
             <br />
+
             <div>
+                <h6>User</h6>
                 <p>username: @Model.Username</p>
                 <p>name: @Model.Name @Model.Surname</p>
                 <p>email: @Model.Email</p>
-
                 <br />
             </div>
 
@@ -25,7 +23,6 @@
                 <h6>Address</h6>
                 <p>@Model.AddressId</p>
                 <br />
-
             </div>
 
             <div class="form-group">
@@ -45,9 +42,8 @@
                    asp-route-id="@Model.Id">
                     Delete
                 </a>
-
             </div>
-
         </div>
+
     </div>
 </div>

@@ -4,31 +4,34 @@
 
 @model ProductDetailsViewModel;
 
-<div class="text-left"
-     asp-controller="Product"
-              asp-action="Details"
-              method="get">
-
+<div class="text-left" 
+     asp-controller="Product" 
+     asp-action="Details" 
+     method="get">
     <div>
+
         <div>
             <h5 class="sessao">Product Details</h5>
             <br />
+
             <div>
                 <h6>Product</h6>
                 <p>Name: @Model.Name</p>
                 <p class="preco">Price: @Model.Price</p>
-                <p>Code: @Model.Id</p>
-                <br />
-            </div>
-           
-            <div>
+
                 <h6>Description:</h6>
                 <p>@Model.Description</p>
-                <br />
-
+            </div>
+            
+            <div>
                 <h6>Category</h6>
-                <p>nº: @Model.CategoryId</p>
-                <br/>
+                <p>@Model.CategoryText</p>
+
+                <h6>Color</h6>
+                <p>@Model.ColorText</p>
+
+                <h6>Size</h6>
+                <p>@Model.SizeText</p>
             </div>
 
             <div class="form-group">
@@ -48,9 +51,8 @@
                    asp-route-id="@Model.Id">
                     Delete
                 </a>
-
             </div>
-
         </div>
+
     </div>
 </div>

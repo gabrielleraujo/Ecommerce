@@ -1,9 +1,9 @@
-﻿using Ecommerce.CrossCutting.DTO.User;
-using FluentResults;
-using Newtonsoft.Json;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using FluentResults;
+using Newtonsoft.Json;
+using Ecommerce.CrossCutting.DTO.User;
 using WebApp.Clients.Interfaces;
 
 namespace WebApp.Clients.HttpClients
