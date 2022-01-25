@@ -17,7 +17,7 @@ This Ecommerce is a clothing store system that is divided into 3 solutions and s
 - AutoMapper
 - Swagger UI with JWT support
 
-## Functionalities
+## Functionalities:
 - Creating, listing, querying, updating, and deleting users, products and categories.
 - Creation, listing, and consultation of colors, sizes, and purchases.
 - Possibility of purchasing products.
