@@ -1,15 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Text;
 using System;
-using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using FluentResults;
-using WebApp.Clients.Interfaces;
 using Ecommerce.CrossCutting.DTO.User;
+using WebApp.Clients.Interfaces;
 
 namespace WebApp.Clients.HttpClients
 {
@@ -32,24 +32,7 @@ namespace WebApp.Clients.HttpClients
                 .DefaultRequestHeaders
                 .Authorization = new AuthenticationHeaderValue("Bearer", token);
         }
-
-        public async Task<ReadUserDTO> GetUserByIdAsync(int id)
-        {
-            AddBearerToken();
-
-            HttpResponseMessage response = await _httpClient.GetAsync($"user/{id}");
-            return await response.Content.ReadAsAsync<ReadUserDTO>();
-        }
-
-        async public Task<IList<ReadUserDTO>> GetUsersAsync()
-        {
-            try { AddBearerToken(); }
-            catch (Exception) { return null; }
-
-            HttpResponseMessage response = await _httpClient.GetAsync("user");
-            return await response.Content.ReadAsAsync<List<ReadUserDTO>>();
-        }
-
+        
         async public Task<ReadUserDTO> PostUserAsync(CreateUserDTO userDto)
         {
             AddBearerToken();
@@ -66,6 +49,23 @@ namespace WebApp.Clients.HttpClients
 
             var response = await _httpClient.DeleteAsync($"user/{id}");
             return response.IsSuccessStatusCode ? Result.Ok() : Result.Fail("Error deleting user.");
+        }
+        
+        public async Task<ReadUserDTO> GetUserByIdAsync(int id)
+        {
+            AddBearerToken();
+
+            HttpResponseMessage response = await _httpClient.GetAsync($"user/{id}");
+            return await response.Content.ReadAsAsync<ReadUserDTO>();
+        }
+
+        async public Task<IList<ReadUserDTO>> GetUsersAsync()
+        {
+            try { AddBearerToken(); }
+            catch (Exception) { return null; }
+
+            HttpResponseMessage response = await _httpClient.GetAsync("user");
+            return await response.Content.ReadAsAsync<List<ReadUserDTO>>();
         }
     }
 }

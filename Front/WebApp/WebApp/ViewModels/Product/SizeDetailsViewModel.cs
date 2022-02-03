@@ -2,9 +2,11 @@
 
 namespace WebApp.ViewModels
 {
-    public class CategoryRegistrationViewModel
+    public class SizeDetailsViewModel
     {
         [Required(ErrorMessage = "{0} não informado.")]
-        public string Name { get; set; }
+        public int Id { get; set; }
+
+        public string SizeText { get; private set; }
     }
 }

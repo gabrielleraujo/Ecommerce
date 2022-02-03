@@ -28,18 +28,6 @@ namespace WebApp.Services
             return new UserListViewModel { Users = userHomeViewModel };
         }
 
-        public async Task<IList<UserDetailsViewModel>> ListAsync()
-        {
-            var readUserDto = await _userApiClient.GetUsersAsync();
-            return _mapper.Map<IList<UserDetailsViewModel>>(readUserDto); ;
-        }
-
-        public async Task<UserDetailsViewModel> GetByIdAsync(int id)
-        {
-            var readUserDto = await _userApiClient.GetUserByIdAsync(id);
-            return _mapper.Map<UserDetailsViewModel>(readUserDto);
-        }
-
         public async Task<UserDetailsViewModel> AddAsync(UserRegistrationViewModel usuarioViewModel)
         {
             var createUserDto = _mapper.Map<CreateUserDTO>(usuarioViewModel);
@@ -49,5 +37,18 @@ namespace WebApp.Services
         }
 
         public async Task<Result> DeleteAsync(int id) => await _userApiClient.DeleteUserAsync(id);
+
+
+        public async Task<UserDetailsViewModel> GetByIdAsync(int id)
+        {
+            var readUserDto = await _userApiClient.GetUserByIdAsync(id);
+            return _mapper.Map<UserDetailsViewModel>(readUserDto);
+        }
+
+        public async Task<IList<UserDetailsViewModel>> ListAsync()
+        {
+            var readUserDto = await _userApiClient.GetUsersAsync();
+            return _mapper.Map<IList<UserDetailsViewModel>>(readUserDto); ;
+        }
     }
 }

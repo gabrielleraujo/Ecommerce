@@ -4,6 +4,6 @@ namespace Job.DomainService
 {
     public interface IPurchaseDomainService
     {
-        Task GetHasNoSummaryAsync();
+        Task BuildSummaryAsync();
     }
 }

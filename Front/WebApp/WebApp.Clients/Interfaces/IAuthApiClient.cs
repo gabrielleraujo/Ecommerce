@@ -1,6 +1,6 @@
-﻿using Ecommerce.CrossCutting.DTO.User;
+﻿using System.Threading.Tasks;
+using Ecommerce.CrossCutting.DTO.User;
 using FluentResults;
-using System.Threading.Tasks;
 
 namespace WebApp.Clients.Interfaces
 {

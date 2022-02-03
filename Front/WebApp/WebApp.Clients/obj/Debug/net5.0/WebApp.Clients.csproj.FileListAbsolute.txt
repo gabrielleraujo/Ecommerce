@@ -48,7 +48,6 @@ C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.Clients\obj\Debug\n
 C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.Clients\obj\Debug\net5.0\WebApp.Clients.AssemblyInfoInputs.cache
 C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.Clients\obj\Debug\net5.0\WebApp.Clients.AssemblyInfo.cs
 C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.Clients\obj\Debug\net5.0\WebApp.Clients.csproj.CoreCompileInputs.cache
-C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.Clients\obj\Debug\net5.0\WebApp.Clients.csproj.CopyComplete
 C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.Clients\obj\Debug\net5.0\WebApp.Clients.dll
 C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.Clients\obj\Debug\net5.0\ref\WebApp.Clients.dll
 C:\SistemasPessoais\EcommerceSegregadoV3\Front\WebApp\WebApp.Clients\obj\Debug\net5.0\WebApp.Clients.pdb
