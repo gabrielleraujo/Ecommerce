@@ -1,0 +1,70 @@
+﻿@{ ViewData["Title"] = "Address Registration"; }
+
+@model AddressRegistrationViewModel;
+
+<h5 class="sessao">Delivery Address</h5>
+<div>
+    <div>
+
+        <form asp-controller="Address"
+              asp-action="AddAddress"
+              class="form-row"
+              method="post">
+
+            <div class="form-group col-md-6">
+                <label class="control-label" for="CEP">CEP</label>
+                <input type="text" class="form-control" placeholder="CEP"
+                       asp-for="@Model.CEP">
+                <span asp-validation-for="@Model.CEP" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label class="control-label" for="City">City</label>
+                <input type="text" class="form-control" placeholder="City"
+                       asp-for="@Model.City">
+                <span asp-validation-for="@Model.City" class="text-danger"></span>
+            </div>
+            <div class="w-100"></div>
+
+            <div class="form-group col-md-3">
+                <label class="control-label" for="PassStateword">State</label>
+                <input type="text" class="form-control" placeholder="State"
+                       asp-for="@Model.State">
+                <span asp-validation-for="@Model.State" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group col-md-3">
+                <label class="control-label" for="Neighborhood">Neighborhood</label>
+                <input type="text" class="form-control" placeholder="Neighborhood"
+                       asp-for="@Model.Neighborhood">
+                <span asp-validation-for="@Model.Neighborhood" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label class="control-label" for="Complement">Complement</label>
+                <input type="text" class="form-control" placeholder="Complement"
+                       asp-for="@Model.Complement">
+                <span asp-validation-for="@Model.Complement" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label class="control-label" for="Number">Number</label>
+                <input type="text" class="form-control" placeholder="Number"
+                       asp-for="@Model.Number">
+                <span asp-validation-for="@Model.Number" class="text-danger"></span>
+            </div>
+            <div class="w-100"></div>
+
+            <div class="form-group">
+                <a class="btn btn-warning" asp-controller="Cart" asp-action="Index">
+                    Back
+                </a>
+
+                <button type="submit"
+                        class="btn btn-success">
+                    Finish
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

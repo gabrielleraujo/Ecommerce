@@ -27,7 +27,7 @@ using WebApp.ViewModels;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d3fb3c16d1ef544ef1503ccd000aa0cd20c563e3", @"/Views/User/Registration.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f24f31d3ad95a847ceeae5a207386f2180d838b4", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"97929ca9726ed01634e08557bdc9d979e79a6c97", @"/Views/_ViewImports.cshtml")]
     public class Views_User_Registration : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<UserRegistrationViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("type", "text", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

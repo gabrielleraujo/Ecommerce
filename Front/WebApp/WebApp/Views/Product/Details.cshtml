@@ -4,9 +4,9 @@
 
 @model ProductDetailsViewModel;
 
-<div class="text-left" 
-     asp-controller="Product" 
-     asp-action="Details" 
+<div class="form-row"
+     asp-controller="Product"
+     asp-action="Details"
      method="get">
     <div>
 
@@ -14,7 +14,7 @@
             <h5 class="sessao">Product Details</h5>
             <br />
 
-            <div>
+            <div class="form-group col-md-6">
                 <h6>Product</h6>
                 <p>Name: @Model.Name</p>
                 <p class="preco">Price: @Model.Price</p>
@@ -22,19 +22,23 @@
                 <h6>Description:</h6>
                 <p>@Model.Description</p>
             </div>
-            
-            <div>
+            <div class="w-100"></div>
+
+            <div class="form-group col-md-2">
                 <h6>Category</h6>
                 <p>@Model.CategoryText</p>
-
+            </div>
+            <div class="form-group col-md-2">
                 <h6>Color</h6>
                 <p>@Model.ColorText</p>
-
+            </div>
+            <div class="form-group col-md-2">
                 <h6>Size</h6>
                 <p>@Model.SizeText</p>
             </div>
+            <div class="w-100"></div>
 
-            <div class="form-group">
+            <div class="form-group col-md-12">
                 <a class="btn btn-info"
                    asp-action="Index">
                     Back
