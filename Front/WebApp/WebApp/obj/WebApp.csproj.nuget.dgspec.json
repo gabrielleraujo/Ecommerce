@@ -186,6 +186,10 @@
               "target": "Package",
               "version": "[8.1.1, )"
             },
+            "LocalStorage": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "Microsoft.Extensions.Configuration.Binder": {
               "target": "Package",
               "version": "[5.0.0, )"

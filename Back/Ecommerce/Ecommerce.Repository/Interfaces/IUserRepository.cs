@@ -12,6 +12,6 @@ namespace Ecommerce.Repository.Interfaces
         void Delete(int id);
         public User GetByLogin(string username, string password);
         User GetByEmail(string email);
-        int? GetAddress(int userId);
+        int? GetAddressByUserId(int userId);
     }
 }

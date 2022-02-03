@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Ecommerce.Authentication;
 using Ecommerce.Ioc.Common;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
 
 namespace Ecommerce.API.Controllers
 {

@@ -1,8 +1,0 @@
-C:\SistemasPessoais\TesteAddCorAndTamanhoEmCompra\EcommerceSegregado\Front\WebApp\WebApp\obj\Release\net5.0\WebApp.csproj.AssemblyReference.cache
-C:\SistemasPessoais\TesteAddCorAndTamanhoEmCompra\EcommerceSegregado\Front\WebApp\WebApp\obj\Release\net5.0\WebApp.GeneratedMSBuildEditorConfig.editorconfig
-C:\SistemasPessoais\TesteAddCorAndTamanhoEmCompra\EcommerceSegregado\Front\WebApp\WebApp\obj\Release\net5.0\WebApp.AssemblyInfoInputs.cache
-C:\SistemasPessoais\TesteAddCorAndTamanhoEmCompra\EcommerceSegregado\Front\WebApp\WebApp\obj\Release\net5.0\WebApp.AssemblyInfo.cs
-C:\SistemasPessoais\TesteAddCorAndTamanhoEmCompra\EcommerceSegregado\Front\WebApp\WebApp\obj\Release\net5.0\WebApp.csproj.CoreCompileInputs.cache
-C:\SistemasPessoais\TesteAddCorAndTamanhoEmCompra\EcommerceSegregado\Front\WebApp\WebApp\obj\Release\net5.0\WebApp.MvcApplicationPartsAssemblyInfo.cache
-C:\SistemasPessoais\TesteAddCorAndTamanhoEmCompra\EcommerceSegregado\Front\WebApp\WebApp\obj\Release\net5.0\WebApp.RazorAssemblyInfo.cache
-C:\SistemasPessoais\TesteAddCorAndTamanhoEmCompra\EcommerceSegregado\Front\WebApp\WebApp\obj\Release\net5.0\WebApp.RazorAssemblyInfo.cs

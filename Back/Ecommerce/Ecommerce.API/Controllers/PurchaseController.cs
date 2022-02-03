@@ -6,6 +6,7 @@ using Ecommerce.CrossCutting.DTO.Purchase;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
 using Ecommerce.Ioc.Common;
+using System.Security.Claims;
 
 namespace Ecommerce.API.Controllers
 {

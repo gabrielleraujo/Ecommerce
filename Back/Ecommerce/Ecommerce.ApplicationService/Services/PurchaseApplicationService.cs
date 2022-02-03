@@ -58,7 +58,7 @@ namespace Ecommerce.ApplicationService.Services
         {
             if (novaCompraDto.AddressId <= 0)
             {
-                var addressId = _userDomainService.GetAddress(novaCompraDto.UserId);
+                var addressId = _userDomainService.GetAddressByUserId(novaCompraDto.UserId);
 
                 if (addressId == null)
                 {

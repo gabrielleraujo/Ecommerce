@@ -16,14 +16,14 @@
                 <label class="control-label" for="Name">Product's name</label>
                 <input type="text" class="form-control" placeholder="Product's name"
                        asp-for="@Model.Name">
-                <span asp-validation-for="@Model.Name" class="text-validation"></span>
+                <span asp-validation-for="@Model.Name" class="text-danger"></span>
             </div>
 
             <div class="form-group col-md-6">
                 <label class="control-label" for="Price">Price R$</label>
                 <input type="number" step="0.01" class="form-control" placeholder="Price R$"
                        asp-for="@Model.Price">
-                <span asp-validation-for="@Model.Price" class="text-validation"></span>
+                <span asp-validation-for="@Model.Price" class="text-danger"></span>
             </div>
             <div class="w-100"></div>
 
@@ -31,7 +31,7 @@
                 <label class="control-label" for="Description">Description</label>
                 <input type="text" class="form-control" placeholder="Description"
                        asp-for="@Model.Description">
-                <span asp-validation-for="@Model.Description" class="text-validation"></span>
+                <span asp-validation-for="@Model.Description" class="text-danger"></span>
             </div>
             <div class="w-100"></div>
 
@@ -44,7 +44,7 @@
                         <option value=@category.Id>@category.CategoryText</option>
                     }
                 </select>
-                <span asp-validation-for="@Model.CategoryId" class="text-validation"></span>
+                <span asp-validation-for="@Model.CategoryId" class="text-danger"></span>
             </div>
 
             <div class="form-group col-md-4">
@@ -56,7 +56,7 @@
                         <option value=@color.Id>@color.ColorText</option>
                     }
                 </select>
-                <span asp-validation-for="@Model.ColorId" class="text-validation"></span>
+                <span asp-validation-for="@Model.ColorId" class="text-danger"></span>
             </div>
 
             <div class="form-group col-md-4">
@@ -68,7 +68,7 @@
                         <option value=@size.Id>@size.SizeText</option>
                     }
                 </select>
-                <span asp-validation-for="@Model.SizeId" class="text-validation"></span>
+                <span asp-validation-for="@Model.SizeId" class="text-danger"></span>
             </div>
 
             <div class="w-100"></div>

@@ -83,9 +83,9 @@ namespace Ecommerce.DomainService.Services
             return user != null ? _mapper.Map<ReadUserDTO>(user) : null;
         }
 
-        public int? GetAddress(int userId)
+        public int? GetAddressByUserId(int userId)
         {
-            return _userRepository.GetAddress(userId);
+            return _userRepository.GetAddressByUserId(userId);
         }
     }
 }

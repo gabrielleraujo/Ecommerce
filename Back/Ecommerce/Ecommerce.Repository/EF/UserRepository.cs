@@ -63,7 +63,7 @@ namespace Ecommerce.Repository.EF
                 .FirstOrDefault(u => u.Email == email);
         }
 
-        public int? GetAddress(int userId)
+        public int? GetAddressByUserId(int userId)
         {
             return GetById(userId).AddressId;
         }

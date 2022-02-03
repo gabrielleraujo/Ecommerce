@@ -13,6 +13,6 @@ namespace Ecommerce.DomainService.Interfaces
 
         Result Update(int id, UpdateUserDTO updateUserDto);
         Result Delete(int id);
-        int? GetAddress(int userId);
+        int? GetAddressByUserId(int userId);
     }
 }
