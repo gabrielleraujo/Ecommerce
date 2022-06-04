@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.Extensions.DependencyInjection;
 using WebApp.Clients.HttpClients;
 using WebApp.Clients.Interfaces;
 using WebApp.Services;
 using WebApp.Services.Interfaces;
-using WebApp.ViewModels;
 
 namespace WebApp.Ioc
 {
     public static class DependencyInjection
     {
+        private static readonly Uri _ecommerceURL = new Uri(Environment.GetEnvironmentVariable("ECOMMERCE_URL"));
         public static void AddDependencyInjection(this IServiceCollection services)
         {
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -23,23 +22,23 @@ namespace WebApp.Ioc
 
             services.AddHttpClient<IUserApiClient, UserApiClient>
                 ("user", c =>
-                { c.BaseAddress = new Uri("https://localhost:5001/api/v1.0/"); });
+                { c.BaseAddress = _ecommerceURL; });
 
             services.AddHttpClient<IProductApiClient, ProductApiClient>
                 ("product", c =>
-                { c.BaseAddress = new Uri("https://localhost:5001/api/v1.0/"); });
+                { c.BaseAddress = _ecommerceURL; });
 
             services.AddHttpClient<IAuthApiClient, AuthApiClient>
                 ("auth", c =>
-                { c.BaseAddress = new Uri("https://localhost:5001/api/v1.0/"); });
+                { c.BaseAddress = _ecommerceURL; });
 
             services.AddHttpClient<IPurchaseApiClient, PurchaseApiClient>
-                ("auth", c =>
-                { c.BaseAddress = new Uri("https://localhost:5001/api/v1.0/"); });
+                ("purchase", c =>
+                { c.BaseAddress = _ecommerceURL; });
 
             services.AddHttpClient<IAddressApiClient, AddressApiClient>
-                ("auth", c =>
-                { c.BaseAddress = new Uri("https://localhost:5001/api/v1.0/"); });
+                ("address", c =>
+                { c.BaseAddress = _ecommerceURL; });
         }
     }
 }
