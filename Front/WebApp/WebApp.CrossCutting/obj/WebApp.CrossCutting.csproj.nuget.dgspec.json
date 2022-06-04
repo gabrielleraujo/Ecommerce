@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\SistemasPessoais\\EcommerceSegregadoV3\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj": {}
+    "C:\\Others\\Ecommerce\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj": {}
   },
   "projects": {
-    "C:\\SistemasPessoais\\EcommerceSegregadoV3\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj": {
+    "C:\\Others\\Ecommerce\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SistemasPessoais\\EcommerceSegregadoV3\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj",
+        "projectUniqueName": "C:\\Others\\Ecommerce\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj",
         "projectName": "WebApp.CrossCutting",
-        "projectPath": "C:\\SistemasPessoais\\EcommerceSegregadoV3\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\SistemasPessoais\\EcommerceSegregadoV3\\Front\\WebApp\\WebApp.CrossCutting\\obj\\",
+        "projectPath": "C:\\Others\\Ecommerce\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\gabrielle.souza\\.nuget\\packages\\",
+        "outputPath": "C:\\Others\\Ecommerce\\Front\\WebApp\\WebApp.CrossCutting\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gabrielle.souza\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

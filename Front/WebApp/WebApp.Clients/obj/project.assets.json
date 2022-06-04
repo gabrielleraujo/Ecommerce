@@ -5494,23 +5494,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\gabrielle.souza\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\SistemasPessoais\\EcommerceSegregadoV3\\Front\\WebApp\\WebApp.Clients\\WebApp.Clients.csproj",
+      "projectUniqueName": "C:\\Others\\Ecommerce\\Front\\WebApp\\WebApp.Clients\\WebApp.Clients.csproj",
       "projectName": "WebApp.Clients",
-      "projectPath": "C:\\SistemasPessoais\\EcommerceSegregadoV3\\Front\\WebApp\\WebApp.Clients\\WebApp.Clients.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\SistemasPessoais\\EcommerceSegregadoV3\\Front\\WebApp\\WebApp.Clients\\obj\\",
+      "projectPath": "C:\\Others\\Ecommerce\\Front\\WebApp\\WebApp.Clients\\WebApp.Clients.csproj",
+      "packagesPath": "C:\\Users\\gabrielle.souza\\.nuget\\packages\\",
+      "outputPath": "C:\\Others\\Ecommerce\\Front\\WebApp\\WebApp.Clients\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gabrielle.souza\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5524,8 +5520,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\SistemasPessoais\\EcommerceSegregadoV3\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj": {
-              "projectPath": "C:\\SistemasPessoais\\EcommerceSegregadoV3\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj"
+            "C:\\Others\\Ecommerce\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj": {
+              "projectPath": "C:\\Others\\Ecommerce\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj"
             }
           }
         }
@@ -5568,7 +5564,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
