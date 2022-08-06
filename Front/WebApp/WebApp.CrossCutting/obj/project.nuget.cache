@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b6c6ke53x3HV40+jdCFNtn/svcBb6MOXDxGQFEyMs/crCAI0EgMmQDVZYXJ923ss44YW1TSkyR/jQmnvsfCFUw==",
+  "dgSpecHash": "spfKXhRdu+2bGskpfqpD2y9Ja0uiO7mOCuNeVxugsKu1d5lVAijkAawt1dy/AC+1BrBaZG/DRD+3Kg3nibrwxw==",
   "success": true,
-  "projectFilePath": "C:\\Others\\Ecommerce\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj",
+  "projectFilePath": "C:\\SistemasPessoais\\EcommerceSegregadoV3\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

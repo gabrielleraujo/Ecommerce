@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Others\\Ecommerce\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj": {}
+    "C:\\SistemasPessoais\\EcommerceSegregadoV3\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj": {}
   },
   "projects": {
-    "C:\\Others\\Ecommerce\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj": {
+    "C:\\SistemasPessoais\\EcommerceSegregadoV3\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Others\\Ecommerce\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj",
+        "projectUniqueName": "C:\\SistemasPessoais\\EcommerceSegregadoV3\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj",
         "projectName": "WebApp.CrossCutting",
-        "projectPath": "C:\\Others\\Ecommerce\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj",
-        "packagesPath": "C:\\Users\\gabrielle.souza\\.nuget\\packages\\",
-        "outputPath": "C:\\Others\\Ecommerce\\Front\\WebApp\\WebApp.CrossCutting\\obj\\",
+        "projectPath": "C:\\SistemasPessoais\\EcommerceSegregadoV3\\Front\\WebApp\\WebApp.CrossCutting\\WebApp.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\SistemasPessoais\\EcommerceSegregadoV3\\Front\\WebApp\\WebApp.CrossCutting\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\gabrielle.souza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,7 +48,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -54,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400-preview.22330.6\\RuntimeIdentifierGraph.json"
         }
       }
     }
