@@ -1,0 +1,15 @@
+C:\SistemasPessoais\EcommerceSegregadoV3\Back\Ecommerce\Ecommerce.Data\bin\Debug\net5.0\Ecommerce.Data.deps.json
+C:\SistemasPessoais\EcommerceSegregadoV3\Back\Ecommerce\Ecommerce.Data\bin\Debug\net5.0\Ecommerce.Data.runtimeconfig.json
+C:\SistemasPessoais\EcommerceSegregadoV3\Back\Ecommerce\Ecommerce.Data\bin\Debug\net5.0\Ecommerce.Data.runtimeconfig.dev.json
+C:\SistemasPessoais\EcommerceSegregadoV3\Back\Ecommerce\Ecommerce.Data\bin\Debug\net5.0\Ecommerce.Data.dll
+C:\SistemasPessoais\EcommerceSegregadoV3\Back\Ecommerce\Ecommerce.Data\bin\Debug\net5.0\Ecommerce.Data.pdb
+C:\SistemasPessoais\EcommerceSegregadoV3\Back\Ecommerce\Ecommerce.Data\obj\Debug\net5.0\Ecommerce.Data.csproj.AssemblyReference.cache
+C:\SistemasPessoais\EcommerceSegregadoV3\Back\Ecommerce\Ecommerce.Data\obj\Debug\net5.0\Ecommerce.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\SistemasPessoais\EcommerceSegregadoV3\Back\Ecommerce\Ecommerce.Data\obj\Debug\net5.0\Ecommerce.Data.AssemblyInfoInputs.cache
+C:\SistemasPessoais\EcommerceSegregadoV3\Back\Ecommerce\Ecommerce.Data\obj\Debug\net5.0\Ecommerce.Data.AssemblyInfo.cs
+C:\SistemasPessoais\EcommerceSegregadoV3\Back\Ecommerce\Ecommerce.Data\obj\Debug\net5.0\Ecommerce.Data.csproj.CoreCompileInputs.cache
+C:\SistemasPessoais\EcommerceSegregadoV3\Back\Ecommerce\Ecommerce.Data\obj\Debug\net5.0\Ecommerce.Data.dll
+C:\SistemasPessoais\EcommerceSegregadoV3\Back\Ecommerce\Ecommerce.Data\obj\Debug\net5.0\refint\Ecommerce.Data.dll
+C:\SistemasPessoais\EcommerceSegregadoV3\Back\Ecommerce\Ecommerce.Data\obj\Debug\net5.0\Ecommerce.Data.pdb
+C:\SistemasPessoais\EcommerceSegregadoV3\Back\Ecommerce\Ecommerce.Data\obj\Debug\net5.0\Ecommerce.Data.genruntimeconfig.cache
+C:\SistemasPessoais\EcommerceSegregadoV3\Back\Ecommerce\Ecommerce.Data\obj\Debug\net5.0\ref\Ecommerce.Data.dll
